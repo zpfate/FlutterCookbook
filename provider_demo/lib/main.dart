@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:provider_demo/future_builder_page.dart';
 
 void main() {
   runApp(MyApp());
@@ -102,6 +103,7 @@ class _MyHomePageState extends State<MyHomePage> {
               title: "FutureBuilder",
               onPressed: () {
 
+                Navigator.push(context, MaterialPageRoute(builder: (context)=> FutureBuilderPage()));
               }
             ),
 
@@ -146,6 +148,9 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget _singleButton({String title, Function onPressed}) {
     return OutlineButton(
       onPressed: () {
+        if (onPressed != null) {
+          onPressed();
+        }
 
       },
       child: Container(
