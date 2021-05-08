@@ -102,7 +102,6 @@ class _MyHomePageState extends State<MyHomePage> {
             _singleButton(
               title: "FutureBuilder",
               onPressed: () {
-
                 Navigator.push(context, MaterialPageRoute(builder: (context)=> FutureBuilderPage()));
               }
             ),
@@ -110,6 +109,7 @@ class _MyHomePageState extends State<MyHomePage> {
             _singleButton(
                 title: "GlobalKey",
                 onPressed: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (context)=> FutureBuilderPage()));
 
                 }
             ),

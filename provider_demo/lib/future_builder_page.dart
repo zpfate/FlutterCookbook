@@ -13,7 +13,7 @@ class _FutureBuilderPageState extends State<FutureBuilderPage> {
       appBar: AppBar(
         title: Text("FutrureBuilder Demo"),
       ),
-      body: Container(),
+      body: FutureBuilder(builder: null),
     );
   }
 }
