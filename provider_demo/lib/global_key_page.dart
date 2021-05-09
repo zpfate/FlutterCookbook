@@ -13,7 +13,17 @@ class _GlobalKeyPageState extends State<GlobalKeyPage> {
       appBar: AppBar(
         title: Text("GlobalKey Demo"),
       ),
-      body: Container(),
+      body: FutureBuilder(
+        future: ,
+        builder: (context, snapshot) {
+          return Text("title");
+        },
+
+      ),
     );
+  }
+
+  Future<String> getAsyncText() {
+    return "text";
   }
 }
