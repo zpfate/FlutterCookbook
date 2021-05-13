@@ -14,9 +14,10 @@ class _GlobalKeyPageState extends State<GlobalKeyPage> {
         title: Text("GlobalKey Demo"),
       ),
       body: FutureBuilder(
-        future: ,
+        future: getAsyncText(),
         builder: (context, snapshot) {
-          return Text("title");
+          String text = snapshot.data;
+          return Text(text);
         },
 
       ),
@@ -24,6 +25,6 @@ class _GlobalKeyPageState extends State<GlobalKeyPage> {
   }
 
   Future<String> getAsyncText() {
-    return "text";
+    return Future.value("future text");
   }
 }
