@@ -19,7 +19,6 @@ class _GlobalKeyPageState extends State<GlobalKeyPage> {
           String text = snapshot.data;
           return Text(text);
         },
-
       ),
     );
   }

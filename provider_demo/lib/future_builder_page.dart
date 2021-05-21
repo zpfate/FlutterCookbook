@@ -29,17 +29,12 @@ class _FutureBuilderPageState extends State<FutureBuilderPage> {
     );
   }
 
-
   Future futureAlbumn() {
-
     var response = Dio().get('https://jsonplaceholder.typicode.com/albums/1');
     return response;
-
   }
-
 
   Future<String> getAsyncText() {
     return Future.value("future text");
   }
-
 }

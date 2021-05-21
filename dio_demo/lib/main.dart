@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:provider_demo/future_builder_page.dart';
-import 'package:encrypt/encrypt.dart';
+
 void main() {
   runApp(MyApp());
 }
@@ -54,15 +53,6 @@ class _MyHomePageState extends State<MyHomePage> {
   int _counter = 0;
 
   void _incrementCounter() {
-
-
-
-  final key = "";
-  final iv = "";
-  final result = Encrypter(AES())
-
-
-
     setState(() {
       // This call to setState tells the Flutter framework that something has
       // changed in this State, which causes it to rerun the build method below
@@ -107,65 +97,21 @@ class _MyHomePageState extends State<MyHomePage> {
           // horizontal).
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-
-            _singleButton(
-              title: "FutureBuilder",
-              onPressed: () {
-                Navigator.push(context, MaterialPageRoute(builder: (context)=> FutureBuilderPage()));
-              }
+            Text(
+              'You have pushed the button this many times:',
             ),
-
-            _singleButton(
-                title: "GlobalKey",
-                onPressed: () {
-                  Navigator.push(context, MaterialPageRoute(builder: (context)=> FutureBuilderPage()));
-
-                }
+            Text(
+              '$_counter',
+              style: Theme.of(context).textTheme.headline4,
             ),
-
-            _singleButton(
-                title: "StreamController",
-                onPressed: () {
-
-                }
-            ),
-
-            _singleButton(
-                title: "Provier",
-                onPressed: () {
-
-                }
-            ),
-
-            _singleButton(
-                title: "BLoc",
-                onPressed: () {
-
-                }
-            ),
-
-
-
           ],
         ),
       ),
-
+      floatingActionButton: FloatingActionButton(
+        onPressed: _incrementCounter,
+        tooltip: 'Increment',
+        child: Icon(Icons.add),
+      ), // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
-
-
-  Widget _singleButton({String title, Function onPressed}) {
-    return OutlineButton(
-      onPressed: () {
-        if (onPressed != null) {
-          onPressed();
-        }
-
-      },
-      child: Container(
-        child: Text(title),
-      ),
-    );
-  }
-
 }
