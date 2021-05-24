@@ -5,5 +5,4 @@ class CountController extends GetxController {
   increment() {
     count++;
   }
-
 }
