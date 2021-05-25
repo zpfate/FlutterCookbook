@@ -18,9 +18,12 @@ class Homepage extends StatelessWidget {
       body: Center(
         child: Column(
           children: [
-            ElevatedButton(onPressed: ()=> Get.to(NextPage()), child: Text("Get to NextPage")),
-
-            Obx(()=> Text("${controller.count}")),
+            ElevatedButton(
+              /// 使用简单的Get.to代替Navigator.push
+                onPressed: ()=> Get.to(()=>NextPage()),
+                child: Text("Get to NextPage")),
+            /// 使用Obx(()=>每当改变计数时，就更新Text()。
+            Obx(()=> Text("clicks:${controller.count}")),
           ],
         ),
       ),
