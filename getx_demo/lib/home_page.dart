@@ -27,10 +27,19 @@ class Homepage extends StatelessWidget {
           ],
         ),
       ),
+
       floatingActionButton: FloatingActionButton(
         child: Icon(Icons.add),
         onPressed: controller.increment,
       ),
+    );
+  }
+
+
+  Widget _selectItemWidget({String title, Function onPressed}) {
+    return ElevatedButton(
+        onPressed: onPressed,
+        child: Text(title, style: TextStyle(fontSize: 16),)
     );
   }
 }
