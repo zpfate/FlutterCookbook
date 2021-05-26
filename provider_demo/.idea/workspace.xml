@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AndroidLogFilters">
+    <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="3c83c895-4176-4ee9-acc5-27dcf1b1b209" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../dio_demo/lib/http_client.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../dio_demo/lib/http_client.dart" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[]" />
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectId" id="1sBoQGaWy0PJ0Xh2SIP8lgcmp4g" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="dart.analysis.tool.window.force.activate" value="true" />
+    <property name="dart.analysis.tool.window.visible" value="false" />
+    <property name="io.flutter.reload.alreadyRun" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="show.migrate.to.gradle.popup" value="false" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="3c83c895-4176-4ee9-acc5-27dcf1b1b209" name="Default Changelist" comment="" />
+      <created>1620355325766</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1620355325766</updated>
+    </task>
+    <task id="LOCAL-00001" summary="future_builder_page ui">
+      <created>1620474619756</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1620474619756</updated>
+    </task>
+    <task id="LOCAL-00002" summary="引入dio">
+      <created>1620899329662</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1620899329662</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
+    <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="future_builder_page ui" />
+    <MESSAGE value="引入dio" />
+    <option name="LAST_COMMIT_MESSAGE" value="引入dio" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="617" y="152" key="CommitChangelistDialog2" timestamp="1620899328949">
+      <screen x="0" y="23" width="1920" height="1057" />
+    </state>
+    <state x="617" y="152" key="CommitChangelistDialog2/0.23.1920.1057@0.23.1920.1057" timestamp="1620899328949" />
+    <state width="1219" height="307" key="GridCell.Tab.0.bottom" timestamp="1621215083359">
+      <screen x="0" y="23" width="1920" height="1057" />
+    </state>
+    <state width="1219" height="307" key="GridCell.Tab.0.bottom/0.23.1920.1057@0.23.1920.1057" timestamp="1621215083359" />
+    <state width="1219" height="307" key="GridCell.Tab.0.center" timestamp="1621215083358">
+      <screen x="0" y="23" width="1920" height="1057" />
+    </state>
+    <state width="1219" height="307" key="GridCell.Tab.0.center/0.23.1920.1057@0.23.1920.1057" timestamp="1621215083358" />
+    <state width="1219" height="307" key="GridCell.Tab.0.left" timestamp="1621215083358">
+      <screen x="0" y="23" width="1920" height="1057" />
+    </state>
+    <state width="1219" height="307" key="GridCell.Tab.0.left/0.23.1920.1057@0.23.1920.1057" timestamp="1621215083358" />
+    <state width="1219" height="307" key="GridCell.Tab.0.right" timestamp="1621215083358">
+      <screen x="0" y="23" width="1920" height="1057" />
+    </state>
+    <state width="1219" height="307" key="GridCell.Tab.0.right/0.23.1920.1057@0.23.1920.1057" timestamp="1621215083358" />
+    <state x="-13" y="111" key="SettingsEditor" timestamp="1620898054839">
+      <screen x="0" y="23" width="1920" height="1057" />
+    </state>
+    <state x="-13" y="111" key="SettingsEditor/0.23.1920.1057@0.23.1920.1057" timestamp="1620898054839" />
+    <state x="691" y="318" key="Vcs.Push.Dialog.v2" timestamp="1620899331527">
+      <screen x="0" y="23" width="1920" height="1057" />
+    </state>
+    <state x="691" y="318" key="Vcs.Push.Dialog.v2/0.23.1920.1057@0.23.1920.1057" timestamp="1620899331527" />
+    <state x="1031" y="472" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1620962158663">
+      <screen x="0" y="23" width="1920" height="1057" />
+    </state>
+    <state x="1031" y="472" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.23.1920.1057@0.23.1920.1057" timestamp="1620962158663" />
+    <state x="388" y="295" width="670" height="676" key="search.everywhere.popup" timestamp="1620986376816">
+      <screen x="0" y="23" width="1920" height="1057" />
+    </state>
+    <state x="388" y="295" width="670" height="676" key="search.everywhere.popup/0.23.1920.1057@0.23.1920.1057" timestamp="1620986376816" />
+  </component>
+</project>
