@@ -5,8 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f0f4e4e0-6faa-4e8d-a557-506125d88f20" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/ios/Runner.xcodeproj/project.xcworkspace/contents.xcworkspacedata" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Runner.xcodeproj/project.xcworkspace/contents.xcworkspacedata" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/main.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../getx_demo/lib/textfield_associate_menu.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../getx_demo/lib/home_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../getx_demo/lib/home_page.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../getx_demo/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/../getx_demo/pubspec.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

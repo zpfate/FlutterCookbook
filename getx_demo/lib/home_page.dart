@@ -2,9 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:getx_demo/count_controller.dart';
 import 'package:get/get.dart';
 import 'package:getx_demo/next_page.dart';
+import 'package:getx_demo/textfield_associate_menu.dart';
 class Homepage extends StatelessWidget {
-  const Homepage({Key key}) : super(key: key);
+   Homepage({Key? key}) : super(key: key);
 
+  GlobalKey _textKey = GlobalKey();
+  TextEditingController _controller = TextEditingController();
   @override
   Widget build(BuildContext context) {
 
@@ -15,16 +18,27 @@ class Homepage extends StatelessWidget {
       appBar: AppBar(
         title: Text("GetX Counter Demo"),
       ),
-      body: Center(
-        child: Column(
-          children: [
-            ElevatedButton(
-              /// 使用简单的Get.to代替Navigator.push
-                onPressed: ()=> Get.to(()=>NextPage()),
-                child: Text("Get to NextPage")),
-            /// 使用Obx(()=>每当改变计数时，就更新Text()。
-            Obx(()=> Text("clicks:${controller.count}")),
-          ],
+      body: Container(
+        key: _textKey,
+        child: TextField(
+          controller: _controller,
+          onChanged: (text) {
+
+              List<String> list = ["123", "223", "2355", "233666", "23445555"];
+
+              List<String> newTextList = [];
+              for(var str in list) {
+                if (str.contains(text)) {
+                  newTextList.add(str);
+                }
+              }
+              TextFieldAssociateMenu.showOverlay(context,
+                  globalKey: _textKey,
+                  list: newTextList, onSelected: (index) {
+                    _controller.text = list[index];
+                  }
+              );
+          },
         ),
       ),
 
@@ -35,11 +49,17 @@ class Homepage extends StatelessWidget {
     );
   }
 
-
-  Widget _selectItemWidget({String title, Function onPressed}) {
-    return ElevatedButton(
-        onPressed: onPressed,
-        child: Text(title, style: TextStyle(fontSize: 16),)
+  Widget _getxWidget(CountController controller) {
+    return Column(
+      children: [
+        ElevatedButton(
+          /// 使用简单的Get.to代替Navigator.push
+            onPressed: ()=> Get.to(()=>NextPage()),
+            child: Text("Get to NextPage")),
+        /// 使用Obx(()=>每当改变计数时，就更新Text()。
+        Obx(()=> Text("clicks:${controller.count}")),
+      ],
     );
   }
+
 }
