@@ -3,6 +3,7 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 
 class CustomPaintPage extends StatelessWidget {
+
   const CustomPaintPage({Key? key}) : super(key: key);
 
   @override
@@ -38,7 +39,6 @@ class WheelPainter extends CustomPainter {
     /// 1/6圆
     double radius = (2 * pi) / nbElem;
     /// 包过饼图的矩形框
-
     Rect boundingRect = Rect.fromCircle(center: Offset(wheelSize, wheelSize), radius: wheelSize);
 
     canvas.drawArc(boundingRect, 0, radius, true, getColoredPaint(Colors.orange));
