@@ -1,6 +1,6 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_widgets/log_util.dart';
+import 'package:flutter_widgets/tools/log_util.dart';
 
 class RawGesturePage extends StatefulWidget {
   const RawGesturePage({Key? key}) : super(key: key);
