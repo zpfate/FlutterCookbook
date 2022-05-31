@@ -42,4 +42,11 @@ class _AnimatedBuilderPageState extends State<AnimatedBuilderPage> with TickerPr
       ),
     );
   }
+
+  @override
+  void dispose() {
+    // TODO: implement dispose
+    _animationController.dispose();
+    super.dispose();
+  }
 }
