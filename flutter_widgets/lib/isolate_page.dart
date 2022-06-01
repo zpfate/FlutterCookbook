@@ -12,6 +12,8 @@ class IsolatePage extends StatefulWidget {
 class _IsolatePageState extends State<IsolatePage> {
 
 
+  late Isolate _isolate;
+  
   @override
   void initState() {
     // TODO: implement initState
@@ -34,11 +36,20 @@ class _IsolatePageState extends State<IsolatePage> {
   }
 
 
+
+  start() async {
+    // 创建管道
+    ReceivePort receivePort = ReceivePort();
+    
+    _isolate = await Isolate.spawn((message) {}, "")
+  }
+
+
+
   /// 使用Isolate需要顶级函数或者static
   static void createIsolate() {
     Isolate.spawn((message) {doSth(message);}, "hi");
   }
-
   static doSth(msg) => debugPrint(msg);
 
 }
