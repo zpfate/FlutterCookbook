@@ -35,15 +35,21 @@ class _IsolatePageState extends State<IsolatePage> {
     );
   }
 
-
-
+  /// 开启
   start() async {
     // 创建管道
     ReceivePort receivePort = ReceivePort();
-    
-    _isolate = await Isolate.spawn((message) {}, "")
+    _isolate = await Isolate.spawn(getMsg, receivePort.sendPort);
+    receivePort.listen((message) {
+      debugPrint('message:$message');
+      receivePort.close();
+      /// 杀死并发Isolate
+      _isolate.kill(priority: Isolate.immediate);
+      // _isolate
+    });
   }
 
+  getMsg(sendPort) => sendPort.send("Hello");
 
 
   /// 使用Isolate需要顶级函数或者static

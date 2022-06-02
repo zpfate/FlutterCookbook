@@ -8,8 +8,13 @@ void logUtil({String? message}) {
   var traceString = current.toString().split("\n")[1];
   List<String> components = traceString.split(".");
   String className = components[0];
-  className = className.split("_")[1];
-  var functionName = components[1].split("(")[0];
+  String functionName = "";
+  if (className.contains("_")) {
+    className = className.split("_")[1];
+  } else {
+    className = className.split(" ").last;
+  }
+  functionName = components[1].split("(")[0];
   debugPrint("[$className] $functionName ${message ?? ""}");
 
 
