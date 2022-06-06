@@ -3,6 +3,9 @@ import 'package:flutter/services.dart';
 import 'package:flutter_widgets/tools/log_util.dart';
 
 class MethodChannelUtil {
+
+  /// 原生代码部分在ios appdelegate中
+
   static const methodChannel =  MethodChannel(
       "samples.zpfate/utils");
   static openAppMarket() async {
