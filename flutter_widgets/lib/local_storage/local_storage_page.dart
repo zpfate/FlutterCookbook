@@ -1,6 +1,7 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_widgets/local_storage/file_util.dart';
 import 'package:flutter_widgets/tools/TFAppBar.dart';
 import 'package:flutter_widgets/tools/log_util.dart';
 import 'package:flutter_widgets/tools/widget_bean.dart';
@@ -13,8 +14,6 @@ class LocalStoragePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
 
-
-
     return Scaffold(
       appBar: defaultAppBar(title: "本地化持久"),
       body: Container(
@@ -22,7 +21,7 @@ class LocalStoragePage extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
-           ClickSection(sectionBean: _getFileSectionBean()),
+            ClickSection(sectionBean: _getFileSectionBean()),
             ClickSection(sectionBean: _getSharedPreferencesSectionBean()),
           ],
         ),
@@ -30,34 +29,6 @@ class LocalStoragePage extends StatelessWidget {
     );
   }
 
-
-
-  /// 创建文件目录
-  Future<File>  _localFile() async {
-    final directory = await getApplicationDocumentsDirectory();
-    final path = directory.path;
-    logUtil(message: "documentPath = $path");
-    return File('$path/context.txt');
-  }
-
-  /// 写入
-  Future<File> _writeContent(String content) async {
-    final file = await _localFile();
-    file.writeAsString(content);
-    return file;
-  }
-
-  /// 读取
-  Future<String> _readContent() async {
-    try {
-      final file = await _localFile();
-      String contents = await file.readAsString();
-      logUtil(message: "read success, string = $contents");
-      return contents;
-    } catch (e) {
-      return "read failed";
-    }
-  }
 
   /// 读取SharedPreferences中key为counter的值
   Future _loadCounter() async {
@@ -71,14 +42,14 @@ class LocalStoragePage extends StatelessWidget {
   }
 
   /// 新建数据库
-  final Future<Database> database = openDatabase(
-      join(await getDatabasesPath(), 'students_database.db'),
-      onCreate: (db, version)=>db.execute("CREATE TABLE students(id TEXT PRIMARY KEY, name TEXT, score INTEGER)"),
-  onUpgrade: (db, oldVersion, newVersion){
-  //dosth for migration
-  },
-  version: 1,
-  );
+  // final Future<Database> database = openDatabase(
+  //     join(await getDatabasesPath(), 'students_database.db'),
+  //     onCreate: (db, version)=>db.execute("CREATE TABLE students(id TEXT PRIMARY KEY, name TEXT, score INTEGER)"),
+  // onUpgrade: (db, oldVersion, newVersion){
+  // //dosth for migration
+  // },
+  // version: 1,
+  // );
 
   SectionBean _getFileSectionBean() {
     return SectionBean(
@@ -90,19 +61,19 @@ class LocalStoragePage extends StatelessWidget {
           WidgetBean(
             title: "创建文件目录",
             onPressed: () {
-              _localFile();
-            },
+              FileUtil.makeLocalFile();
+              },
           ),
           WidgetBean(
             title: "写入",
             onPressed: () {
-              _writeContent("content");
+              FileUtil.write(content: "content");
             },
           ),
           WidgetBean(
             title: "读取",
             onPressed: () {
-              _readContent();
+              FileUtil.readContent();
             },
           ),
         ]
