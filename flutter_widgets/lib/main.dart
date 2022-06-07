@@ -1,5 +1,4 @@
-import 'dart:isolate';
-
+import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_widgets/animated_builder_page.dart';
 import 'package:flutter_widgets/animated_widget_page.dart';
@@ -14,20 +13,50 @@ import 'package:flutter_widgets/method_channel/method_channel_page.dart';
 import 'package:flutter_widgets/network.dart';
 import 'package:flutter_widgets/notification.dart';
 import 'package:flutter_widgets/platform_view_page.dart';
-import 'package:flutter_widgets/raw_gesture.dart';
 import 'package:flutter_widgets/route_page.dart';
 import 'package:flutter_widgets/sliver.dart';
 import 'package:flutter_widgets/state_manager/state_manager_page.dart';
-import 'package:flutter_widgets/tools/navigator_extension.dart';
+import 'package:flutter_widgets/stream_page.dart';
+import 'package:flutter_widgets/tools/log_util.dart';
 import 'package:flutter_widgets/touch_page.dart';
 import 'package:flutter_widgets/tools/widget_bean.dart';
 
 import 'animation_page.dart';
-import 'custom_paint.dart';
 
 void main() {
-  runApp(const MyApp());
+
+  // This captures errors reported by the Flutter framework.
+  FlutterError.onError = (FlutterErrorDetails details) async {
+    Zone.current.handleUncaughtError(details.exception, details.stack!);
+  };
+
+  ErrorWidget.builder = (FlutterErrorDetails flutterErrorDetails) {
+    print(flutterErrorDetails.toString());
+    return const Scaffold(
+        body: Center(
+          child: Text("页面加载出错~"),
+        )
+    );
+  };
+
+
+  runZonedGuarded(() {
+    runApp(const MyApp());
+  }, (error, stackTrace) async {
+    await _reportError(error, stackTrace);
+  });
 }
+
+Future<Null> _reportError(dynamic error, dynamic stackTrace) async {
+  print('Caught error: $error');
+
+  print('Reporting to Bugly...');
+
+  // FlutterCrashPlugin.postException(error, stackTrace);
+
+}
+
+
 
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
@@ -107,6 +136,8 @@ class _MyHomePageState extends State<MyHomePage> {
       WidgetBean(title: "Method Channel", page: const MethodChannelPage()),
       WidgetBean(title: "Platform View", page: const PlatformViewPage()),
       WidgetBean(title: "状态管理", page: const StateManagerPage()),
+
+      WidgetBean(title: "Stream", page: const StreamPage()),
 
     ];
 

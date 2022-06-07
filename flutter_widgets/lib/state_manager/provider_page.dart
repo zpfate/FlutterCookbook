@@ -49,12 +49,12 @@ class ProviderNextPage extends StatelessWidget {
 
     return Scaffold(
       appBar: defaultAppBar(title: "Provider Next Page"),
-      body: ChangeNotifierProvider(
-        create: ,
-        builder: (ctx, child) {
-          return Text('Counter: ${_counter.counter}');
-        },
-      ),
+      // body: ChangeNotifierProvider(
+      //   create: ,
+      //   builder: (ctx, child) {
+      //     return Text('Counter: ${_counter.counter}');
+      //   },
+      // ),
       /// 用资源更新方法来设置按钮点击回调
       floatingActionButton:FloatingActionButton(
         onPressed: _counter.increment,
