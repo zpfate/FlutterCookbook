@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_widgets/tools/TFAppBar.dart';
 import 'package:flutter_widgets/tools/log_util.dart';
@@ -9,7 +11,10 @@ class StreamPage extends StatelessWidget {
 
     var stream = countStream(10);
     // var sum = await sumStream(stream);
-    
+
+    if (Platform.isIOS) {
+    }
+
     return Scaffold(
       appBar: defaultAppBar(title: "Stream"),
       // body: ,
