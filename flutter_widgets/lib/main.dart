@@ -2,6 +2,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_widgets/animated_builder_page.dart';
 import 'package:flutter_widgets/animated_widget_page.dart';
+import 'package:flutter_widgets/dropdown_textfield.dart';
 import 'package:flutter_widgets/event_bus_page.dart';
 import 'package:flutter_widgets/future_page.dart';
 import 'package:flutter_widgets/hero_page.dart';
@@ -136,8 +137,8 @@ class _MyHomePageState extends State<MyHomePage> {
       WidgetBean(title: "Method Channel", page: const MethodChannelPage()),
       WidgetBean(title: "Platform View", page: const PlatformViewPage()),
       WidgetBean(title: "状态管理", page: const StateManagerPage()),
-
       WidgetBean(title: "Stream", page: const StreamPage()),
+      WidgetBean(title: "PopupRoute", page: const PopupRoutePage()),
 
     ];
 
