@@ -33,7 +33,9 @@ class ClickWidget extends StatelessWidget {
           if (widgetBean.page != null) {
             push(context, widgetBean.page!);
           } else {
-            widgetBean.onPressed!();
+            if (widgetBean.onPressed != null) {
+              widgetBean.onPressed!();
+            }
           }
         },
       ),

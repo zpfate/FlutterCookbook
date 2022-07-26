@@ -7,6 +7,7 @@ import 'package:flutter_widgets/tools/log_util.dart';
 import 'package:flutter_widgets/tools/widget_bean.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:sqflite/sqflite.dart';
 
 class LocalStoragePage extends StatelessWidget {
   const LocalStoragePage({Key? key}) : super(key: key);
@@ -23,6 +24,7 @@ class LocalStoragePage extends StatelessWidget {
           children: [
             ClickSection(sectionBean: _getFileSectionBean()),
             ClickSection(sectionBean: _getSharedPreferencesSectionBean()),
+            ClickSection(sectionBean: _getDatabaseSectionBean()),
           ],
         ),
       ),
@@ -42,20 +44,16 @@ class LocalStoragePage extends StatelessWidget {
   }
 
   /// 新建数据库
-  // final Future<Database> database = openDatabase(
-  //     join(await getDatabasesPath(), 'students_database.db'),
-  //     onCreate: (db, version)=>db.execute("CREATE TABLE students(id TEXT PRIMARY KEY, name TEXT, score INTEGER)"),
-  // onUpgrade: (db, oldVersion, newVersion){
-  // //dosth for migration
-  // },
-  // version: 1,
-  // );
+  Future<Database> database = openDatabase(
+    ,
+  );
 
+
+  /// 文件管理
   SectionBean _getFileSectionBean() {
     return SectionBean(
         widgetBean: WidgetBean(
           title: "File",
-          onPressed: ()=> {},
         ),
         list: [
           WidgetBean(
@@ -85,7 +83,6 @@ class LocalStoragePage extends StatelessWidget {
     return SectionBean(
         widgetBean: WidgetBean(
           title: "SharedPreference",
-          onPressed: () {},
         ),
         list: [
           WidgetBean(
@@ -110,7 +107,6 @@ class LocalStoragePage extends StatelessWidget {
     return SectionBean(
         widgetBean: WidgetBean(
           title: "Database",
-          onPressed: () {},
         ),
         list: [
           WidgetBean(
@@ -121,7 +117,14 @@ class LocalStoragePage extends StatelessWidget {
           ),
 
           WidgetBean(
-            title: "读取",
+            title: "插入数据",
+            onPressed: () {
+              _loadCounter();
+            },
+          ),
+
+          WidgetBean(
+            title: "读取数据",
             onPressed: () {
               _loadCounter();
             },

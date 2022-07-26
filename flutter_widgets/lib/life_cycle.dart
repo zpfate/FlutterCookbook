@@ -17,7 +17,7 @@ class _LifeCyclePageState extends State<LifeCyclePage> with WidgetsBindingObserv
     logUtil();
     super.initState();
 
-    WidgetsBinding.instance?.addObserver(this);
+    WidgetsBinding.instance.addObserver(this);
 
   }
 
@@ -54,7 +54,7 @@ class _LifeCyclePageState extends State<LifeCyclePage> with WidgetsBindingObserv
   @override
   void dispose() {
     logUtil();
-    WidgetsBinding.instance?.removeObserver(this);
+    WidgetsBinding.instance.removeObserver(this);
 
     // TODO: implement dispose
     super.dispose();

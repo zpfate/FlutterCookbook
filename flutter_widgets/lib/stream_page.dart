@@ -17,11 +17,13 @@ class StreamPage extends StatelessWidget {
 
     return Scaffold(
       appBar: defaultAppBar(title: "Stream"),
-      // body: ,
+      // body: Text(getName()!),
     );
   }
 
-  
+  String? getName() {
+    return null;
+  }
   void _streamFromFuture() {
     Stream stream = Stream.fromFuture(Future.delayed(const Duration( seconds: 1), () {
       return "Hello Stream";
