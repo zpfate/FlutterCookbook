@@ -8,6 +8,7 @@ import 'package:flutter_widgets/future_page.dart';
 import 'package:flutter_widgets/hero_page.dart';
 import 'package:flutter_widgets/inherited_page.dart';
 import 'package:flutter_widgets/isolate_page.dart';
+import 'package:flutter_widgets/key/key_page.dart';
 import 'package:flutter_widgets/life_cycle.dart';
 import 'package:flutter_widgets/local_storage/local_storage_page.dart';
 import 'package:flutter_widgets/method_channel/method_channel_page.dart';
@@ -17,6 +18,7 @@ import 'package:flutter_widgets/platform_view_page.dart';
 import 'package:flutter_widgets/route_page.dart';
 import 'package:flutter_widgets/sliver.dart';
 import 'package:flutter_widgets/state_manager/state_manager_page.dart';
+import 'package:flutter_widgets/stream_builder_page.dart';
 import 'package:flutter_widgets/stream_page.dart';
 import 'package:flutter_widgets/tools/log_util.dart';
 import 'package:flutter_widgets/touch_page.dart';
@@ -139,6 +141,8 @@ class _MyHomePageState extends State<MyHomePage> {
       WidgetBean(title: "状态管理", page: const StateManagerPage()),
       WidgetBean(title: "Stream", page: const StreamPage()),
       WidgetBean(title: "PopupRoute", page: const PopupRoutePage()),
+      WidgetBean(title: "StreamBuilder", page: const StreamBuilderPage()),
+      WidgetBean(title: "Key", page: const KeyPage()),
 
     ];
 
