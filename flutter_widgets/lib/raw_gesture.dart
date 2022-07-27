@@ -19,7 +19,7 @@ class _RawGesturePageState extends State<RawGesturePage> {
         gestures: {
           MultipleTapGestureRecognizer: GestureRecognizerFactoryWithHandlers<MultipleTapGestureRecognizer>(
               ()=> MultipleTapGestureRecognizer(), (MultipleTapGestureRecognizer instance) {
-                instance.onTap = () => logUtil(message: 'parent tapped');
+                instance.onTap = () => logUtil('parent tapped');
             },
           ),
         },
@@ -27,7 +27,7 @@ class _RawGesturePageState extends State<RawGesturePage> {
           color: Colors.pinkAccent,
           child: Center(
             child: GestureDetector(
-              onTap: ()=> logUtil(message: "Child tapped"),
+              onTap: ()=> logUtil("Child tapped"),
               child: Container(
 
               ),

@@ -9,7 +9,7 @@ class FileUtil {
  static Future<File> makeLocalFile({String fileName  = "placeholder"}) async {
     final directory = await getApplicationDocumentsDirectory();
     final path = directory.path;
-    logUtil(message: "documentPath = $path");
+    logUtil("documentPath = $path");
     return File('$path/$fileName');
   }
 
@@ -27,7 +27,7 @@ class FileUtil {
    try {
      final file = await makeLocalFile(fileName: fileName);
      String contents = await file.readAsString();
-     logUtil(message: "read success, string = $contents");
+     logUtil("read success, string = $contents");
      return contents;
    } catch (e) {
      return "read failed";

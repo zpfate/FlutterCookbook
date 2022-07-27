@@ -15,7 +15,7 @@ class MethodChannelUtil {
     } catch (e) {
       result = 1;
     }
-    logUtil(message: "Result: $result");
+    logUtil("Result: $result");
   }
 
   /// BinaryCodec:是最为简单的一种Codec，因为其返回值类型和入参的类型相同，均为二进制格式（Android中为ByteBuffer，iOS中为NSData）。
@@ -35,7 +35,7 @@ class MethodChannelUtil {
     } catch (e) {
       result = 1;
     }
-    logUtil(message: "Result: $result");
+    logUtil("Result: $result");
   }
 
 

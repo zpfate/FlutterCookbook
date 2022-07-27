@@ -14,7 +14,7 @@ class _LifeCyclePageState extends State<LifeCyclePage> with WidgetsBindingObserv
   @override
   void initState() {
     // TODO: implement initState
-    logUtil();
+    log();
     super.initState();
 
     WidgetsBinding.instance.addObserver(this);
@@ -23,7 +23,7 @@ class _LifeCyclePageState extends State<LifeCyclePage> with WidgetsBindingObserv
 
   @override
   Widget build(BuildContext context) {
-    logUtil();
+    log();
     return Scaffold(
       appBar: AppBar(title: const Text("LifeCyclePage"),),
       body: Container(),
@@ -33,38 +33,39 @@ class _LifeCyclePageState extends State<LifeCyclePage> with WidgetsBindingObserv
   @override
   void didChangeDependencies() {
     // TODO: implement didChangeDependencies
-    logUtil();
+    log();
     super.didChangeDependencies();
   }
 
   @override
   void didUpdateWidget(covariant LifeCyclePage oldWidget) {
     // TODO: implement didUpdateWidget
-    logUtil();
+    log();
     super.didUpdateWidget(oldWidget);
   }
 
   @override
   void deactivate() {
     // TODO: implement deactivate
-    logUtil();
+    log();
+
     super.deactivate();
   }
 
   @override
   void dispose() {
-    logUtil();
     WidgetsBinding.instance.removeObserver(this);
 
     // TODO: implement dispose
+    log();
+
     super.dispose();
   }
 
   @override
   void didChangeAppLifecycleState(AppLifecycleState state) {
     // TODO: implement didChangeAppLifecycleState
-    logUtil(message: "state = $state");
+    logUtil("state = $state");
     super.didChangeAppLifecycleState(state);
   }
-
 }

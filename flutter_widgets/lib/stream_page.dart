@@ -30,7 +30,7 @@ class StreamPage extends StatelessWidget {
     }));
 
     stream.listen((event) {
-     logUtil(message: "$event");
+     logUtil("$event");
     }, onError: (e) {
       print("onError");
 

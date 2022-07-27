@@ -2,7 +2,12 @@
 
 import 'package:flutter/widgets.dart';
 
-void logUtil({String? message}) {
+
+void log() {
+  logUtil(null);
+}
+
+void logUtil(String? message) {
 
   StackTrace current = StackTrace.current;
   var traceString = current.toString().split("\n")[1];

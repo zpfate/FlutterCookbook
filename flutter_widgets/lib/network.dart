@@ -60,9 +60,9 @@ class _NetworkPageState extends State<NetworkPage> {
 
     /// 收到响应 处理结果
     if (response.statusCode == HttpStatus.ok) {
-      logUtil(message: await response.transform(utf8.decoder).join());
+      logUtil(await response.transform(utf8.decoder).join());
     } else {
-      logUtil(message: 'Error: \nHttp status ${response.statusCode}');
+      logUtil('Error: \nHttp status ${response.statusCode}');
     }
   }
 
@@ -72,9 +72,9 @@ class _NetworkPageState extends State<NetworkPage> {
     var url = Uri.parse("");
     var response = await http.get(url,headers: {"user-agent" : "Custom-UA"});
     if (response.statusCode == HttpStatus.ok) {
-      logUtil(message: response.body);
+      logUtil(response.body);
     } else {
-      logUtil(message: response.body);
+      logUtil(response.body);
     }
   }
 
@@ -82,9 +82,9 @@ class _NetworkPageState extends State<NetworkPage> {
   _dioGet() async {
     var response = await Dio().get("https://flutter.dev", options: Options(headers: {"user-agent" : "Custom-UA"}));
     if (response.statusCode == HttpStatus.ok) {
-      logUtil(message: response.data);
+      logUtil(response.data);
     } else {
-      logUtil(message: "Error: ${response.statusCode}");
+      logUtil("Error: ${response.statusCode}");
     }
   }
 

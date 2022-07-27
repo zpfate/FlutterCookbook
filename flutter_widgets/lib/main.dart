@@ -133,7 +133,7 @@ class _MyHomePageState extends State<MyHomePage> {
       WidgetBean(title: "Future", page: const FuturePage()),
       WidgetBean(title: "Isolate", page: const IsolatePage()),
       WidgetBean(title: "Network", page: const NetworkPage()),
-      WidgetBean(title: "本地化持久", page: const LocalStoragePage()),
+      WidgetBean(title: "本地化持久", page: LocalStoragePage()),
       WidgetBean(title: "Method Channel", page: const MethodChannelPage()),
       WidgetBean(title: "Platform View", page: const PlatformViewPage()),
       WidgetBean(title: "状态管理", page: const StateManagerPage()),
