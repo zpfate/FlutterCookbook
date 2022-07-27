@@ -11,7 +11,7 @@ class CustomEvent {
   CustomEvent(this.msg);
 }
 
-/// //建立公共的event bus
+/// 建立公共的event bus
 EventBus _eventBus = EventBus();
 
 class EventBusPage extends StatefulWidget {

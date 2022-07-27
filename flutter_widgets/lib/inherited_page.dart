@@ -1,6 +1,4 @@
-
 import 'package:flutter/material.dart';
-import 'package:flutter_widgets/tools/log_util.dart';
 
 class InheritedPage extends StatefulWidget {
 
@@ -24,7 +22,7 @@ class _InheritedPageState extends State<InheritedPage> {
 
 class CountContainer extends InheritedWidget {
 
-  // 方便其子Widget在Widget树中找到它
+  /// 方便其子Widget在Widget树中找到它
   static CountContainer? of(BuildContext context) {
     return context.dependOnInheritedWidgetOfExactType<CountContainer>();
   }
@@ -35,6 +33,7 @@ class CountContainer extends InheritedWidget {
   required this.increment,
     required Widget child}): super(key: key, child: child);
 
+  /// 该方法用于判断InheritedWidget是否需要重建,通知下层组件更新数据时被调用
   @override
   bool updateShouldNotify(CountContainer oldWidget) {
     // TODO: implement updateShouldNotify
@@ -49,10 +48,14 @@ class Counter extends StatelessWidget {
   Widget build(BuildContext context) {
     // 获取InheritedWidget的根节点
     CountContainer? state = CountContainer.of(context);
+
     return Scaffold(
       appBar: AppBar(title: const Text("InheritedWidget demo"),),
       body: Text('You have pushed the button this many times: ${state?.count}'),
-      floatingActionButton: FloatingActionButton(onPressed: state?.increment),
+      backgroundColor: Colors.red,
+      floatingActionButton: FloatingActionButton(
+          onPressed: state?.increment
+      ),
     );
   }
 }
