@@ -11,6 +11,12 @@ class KeyPage extends StatefulWidget {
 }
 
 class _KeyPageState extends State<KeyPage> {
+
+  /// Local Key: Value Key  Object Key Unique Key
+  /// Global Key
+  /// Local Key指的是在当前Widget层级下，有唯一的Key属性，
+  /// 而Global Key，则是在全局APP中，具有唯一性。
+  /// Global Key的性能会比Local Key差很多。
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -21,7 +27,6 @@ class _KeyPageState extends State<KeyPage> {
           children: const [
             KeyBox(color: Colors.green),
             KeyBox( color: Colors.yellow,),
-
           ],
         ),
       ),
