@@ -74,9 +74,7 @@ class LocalStoragePage extends StatelessWidget {
   /// 文件管理
   SectionBean _getFileSectionBean() {
     return SectionBean(
-        widgetBean: WidgetBean(
           title: "File",
-        ),
         list: [
           WidgetBean(
             title: "创建文件目录",
@@ -103,9 +101,7 @@ class LocalStoragePage extends StatelessWidget {
   /// SharedPreference
   SectionBean _getSharedPreferencesSectionBean() {
     return SectionBean(
-        widgetBean: WidgetBean(
           title: "SharedPreference",
-        ),
         list: [
           WidgetBean(
             title: "写入",
@@ -129,9 +125,7 @@ class LocalStoragePage extends StatelessWidget {
   /// 数据库
   SectionBean _getDatabaseSectionBean() {
     return SectionBean(
-        widgetBean: WidgetBean(
           title: "Database",
-        ),
         list: [
           WidgetBean(
             title: "插入数据",

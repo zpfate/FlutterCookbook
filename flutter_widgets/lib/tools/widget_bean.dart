@@ -2,22 +2,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_widgets/tools/navigator_extension.dart';
 
-class WidgetBean {
-
-  final String title;
-  final Widget? page;
-  final Function()? onPressed;
-  WidgetBean({required this.title, this.page, this.onPressed});
-}
-
-class SectionBean {
-
-  WidgetBean widgetBean;
-  List<WidgetBean> list;
-
-  SectionBean({required this.widgetBean, required this.list});
-}
-
 class ClickWidget extends StatelessWidget {
 
   final WidgetBean widgetBean;
@@ -50,7 +34,6 @@ class ClickSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
-
     List<Widget> children = [];
     for (var element in sectionBean.list) {
       children.add(ClickWidget(widgetBean: element));
@@ -59,7 +42,7 @@ class ClickSection extends StatelessWidget {
       children: [
         Row(
           children: [
-            ClickWidget(widgetBean: sectionBean.widgetBean),
+            ClickWidget(widgetBean: WidgetBean(title: sectionBean.title)),
           ],
         ),
         ListView(
@@ -74,5 +57,20 @@ class ClickSection extends StatelessWidget {
       ],
     );
   }
+}
 
+class WidgetBean {
+
+  final String title;
+  final Widget? page;
+  final Function()? onPressed;
+  WidgetBean({required this.title, this.page, this.onPressed});
+}
+
+class SectionBean {
+
+  String title;
+  List<WidgetBean> list;
+
+  SectionBean({required this.title, required this.list});
 }
