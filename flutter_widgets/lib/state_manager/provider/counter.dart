@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 
-class CounterModel with ChangeNotifier {
+class Counter with ChangeNotifier {
 
   int _count = 0;
   /// 读方法

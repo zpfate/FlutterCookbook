@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_widgets/state_manager/provider/counter_model.dart';
+import 'package:flutter_widgets/state_manager/provider/counter.dart';
 import 'package:flutter_widgets/tools/TFAppBar.dart';
 import 'package:flutter_widgets/tools/navigator_extension.dart';
 import 'package:flutter_widgets/tools/widget_bean.dart';
 import 'package:provider/provider.dart';
+
+import 'future_provider.dart';
 
 class ProviderPage extends StatefulWidget {
   const ProviderPage({Key? key}) : super(key: key);
@@ -47,36 +49,22 @@ class _ProviderPageState extends State<ProviderPage> {
               ],
             ),
           ),
-
-          Expanded(child: _providerWidget()),
+          const Expanded(child: FutureProviderWidget()),
 
         ],
       ),
       floatingActionButton: FloatingActionButton(onPressed: () {
-        Provider.of<CounterModel>(context).increment();
+        Provider.of<Counter>(context).increment();
       },
         child: const Icon(Icons.add),
       ),
     );
   }
 
-  Widget _providerWidget() {
-    return Provider(
-        create: (ctx) => CounterModel(),
-      child: Text('${Provider.of<CounterModel>(context).counter}'),
-    );
-  }
-
-  
-  Widget _futureProvider() {
-    return FutureProvider(
-        create: (ctx)=> Future.value(42), 
-        initialData: 12,
-      child: Text(''),
-    );
-  }
-
 
 }
+
+
+
 
 
