@@ -23,25 +23,21 @@ import 'package:flutter_widgets/stream_page.dart';
 import 'package:flutter_widgets/tools/log_util.dart';
 import 'package:flutter_widgets/touch_page.dart';
 import 'package:flutter_widgets/tools/widget_bean.dart';
-
 import 'animation_page.dart';
 
 void main() {
-
   // This captures errors reported by the Flutter framework.
   FlutterError.onError = (FlutterErrorDetails details) async {
     Zone.current.handleUncaughtError(details.exception, details.stack!);
   };
-
+ 
   ErrorWidget.builder = (FlutterErrorDetails flutterErrorDetails) {
     print(flutterErrorDetails.toString());
     return const Scaffold(
         body: Center(
-          child: Text("页面加载出错~"),
-        )
-    );
+      child: Text("页面加载出错~"),
+    ));
   };
-
 
   runZonedGuarded(() {
     runApp(const MyApp());
@@ -51,15 +47,12 @@ void main() {
 }
 
 Future<Null> _reportError(dynamic error, dynamic stackTrace) async {
-  print('Caught error: $error');
+  logUtil('Caught error: $error');
 
-  print('Reporting to Bugly...');
+  logUtil('Reporting to Bugly...');
 
   // FlutterCrashPlugin.postException(error, stackTrace);
-
 }
-
-
 
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
@@ -70,9 +63,12 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       //注册路由
-      routes:{ "route_next":(context)=> const RouteNextPage(), },
+      routes: {
+        "route_next": (context) => const RouteNextPage(),
+      },
       //错误路由处理，统一返回UnknownPage
-      onUnknownRoute: (RouteSettings setting) => MaterialPageRoute(builder: (context) => const RouteUnknownPage()),
+      onUnknownRoute: (RouteSettings setting) =>
+          MaterialPageRoute(builder: (context) => const RouteUnknownPage()),
       theme: ThemeData(
         // This is the theme of your application.
         //
@@ -109,7 +105,6 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-
   final List<Widget> _data = [];
 
   @override
@@ -143,7 +138,6 @@ class _MyHomePageState extends State<MyHomePage> {
       WidgetBean(title: "PopupRoute", page: const PopupRoutePage()),
       WidgetBean(title: "StreamBuilder", page: const StreamBuilderPage()),
       WidgetBean(title: "Key", page: const KeyPage()),
-
     ];
 
     for (var element in list) {
@@ -153,7 +147,6 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
-
     return Scaffold(
       appBar: AppBar(
         // Here we take the value from the MyHomePage object that was created by
@@ -161,19 +154,13 @@ class _MyHomePageState extends State<MyHomePage> {
         title: Text(widget.title),
       ),
       body: SafeArea(
-        child: ListView(
-          children: [
-            Wrap(
-              children: _data,
-            ),
-          ],
-        )
-      ),
+          child: ListView(
+        children: [
+          Wrap(
+            children: _data,
+          ),
+        ],
+      )),
     );
   }
-
-
-
-
-
 }

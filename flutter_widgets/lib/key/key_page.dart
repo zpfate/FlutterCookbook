@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_widgets/tools/TFAppBar.dart';
+import 'package:flutter_widgets/tools/tf_app_bar.dart';
 
 import 'key_box.dart';
 
@@ -11,7 +11,6 @@ class KeyPage extends StatefulWidget {
 }
 
 class _KeyPageState extends State<KeyPage> {
-
   /// Local Key: Value Key  Object Key Unique Key
   /// Global Key
   /// Local Key指的是在当前Widget层级下，有唯一的Key属性，
@@ -24,7 +23,10 @@ class _KeyPageState extends State<KeyPage> {
   /// Unique Key自己都说了，它是独一无二的，也就是说，Unique Key只和自己相等，任意创建多个Unique Key，都是不相等的，相当于唯一标识了。
 
   /// Global Key
-  /// Global Key全局唯一且只和自己相等，还记得之前Element在关联新变化的Widget时是怎么比较Key的吗——Element为了效率问题，只会在当前层级下进行寻找，所以，在问题5中，一旦我们修改了某个Widget的层级，那么Element就会消耗重建，那么如果使用了Global Key呢？当Key的类型是Global Key时，Element会不惜代价在全局寻找这个Key，这也是为什么Global Key的效率会比较低的原因。
+  /// Global Key全局唯一且只和自己相等，
+  /// 还记得之前Element在关联新变化的Widget时是怎么比较Key的吗——Element为了效率问题，只会在当前层级下进行寻找，
+  /// 所以，在问题5中，一旦我们修改了某个Widget的层级，那么Element就会消耗重建，
+  /// 那么如果使用了Global Key呢？当Key的类型是Global Key时，Element会不惜代价在全局寻找这个Key，这也是为什么Global Key的效率会比较低的原因。
 
   @override
   Widget build(BuildContext context) {
@@ -37,14 +39,17 @@ class _KeyPageState extends State<KeyPage> {
             // KeyBox(color: Colors.green,),
             // KeyBox(color: Colors.yellow,),
 
-            KeyBox(color: Colors.green, key: ValueKey(1),),
-            KeyBox(color: Colors.yellow, key: ValueKey(2),),
-
+            KeyBox(
+              color: Colors.green,
+              key: ValueKey(1),
+            ),
+            KeyBox(
+              color: Colors.yellow,
+              key: ValueKey(2),
+            ),
           ],
         ),
       ),
     );
   }
 }
-
-

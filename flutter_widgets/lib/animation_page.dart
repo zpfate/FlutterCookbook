@@ -1,6 +1,6 @@
 
 import 'package:flutter/material.dart';
-import 'package:flutter_widgets/tools/TFAppBar.dart';
+import 'package:flutter_widgets/tools/tf_app_bar.dart';
 
 class AnimationPage extends StatefulWidget {
   const AnimationPage({Key? key}) : super(key: key);

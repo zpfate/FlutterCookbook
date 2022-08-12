@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_widgets/tools/TFAppBar.dart';
+import 'package:flutter_widgets/tools/tf_app_bar.dart';
 
 class PlatformViewPage extends StatelessWidget {
   const PlatformViewPage({Key? key}) : super(key: key);

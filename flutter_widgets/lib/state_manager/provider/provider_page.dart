@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_widgets/state_manager/provider/change_notifier_widget.dart';
 import 'package:flutter_widgets/state_manager/provider/counter.dart';
-import 'package:flutter_widgets/tools/TFAppBar.dart';
+import 'package:flutter_widgets/tools/tf_app_bar.dart';
 import 'package:flutter_widgets/tools/navigator_extension.dart';
 import 'package:flutter_widgets/tools/widget_bean.dart';
 import 'package:provider/provider.dart';
@@ -15,7 +16,6 @@ class ProviderPage extends StatefulWidget {
 }
 
 class _ProviderPageState extends State<ProviderPage> {
-
   List<ClickWidget> _data = [];
 
   late Widget _currentWidget;
@@ -25,12 +25,10 @@ class _ProviderPageState extends State<ProviderPage> {
     // TODO: implement initState
     super.initState();
 
-
     _data.addAll([
       ClickWidget(widgetBean: WidgetBean(title: "FutureProvider")),
     ]);
   }
-
 
   @override
   Widget build(BuildContext context) {
@@ -50,21 +48,15 @@ class _ProviderPageState extends State<ProviderPage> {
             ),
           ),
           const Expanded(child: FutureProviderWidget()),
-
+          Expanded(child: ChangeNotifierWidget()),
         ],
       ),
-      floatingActionButton: FloatingActionButton(onPressed: () {
-        Provider.of<Counter>(context).increment();
-      },
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          Provider.of<Counter>(context).increment();
+        },
         child: const Icon(Icons.add),
       ),
     );
   }
-
-
 }
-
-
-
-
-

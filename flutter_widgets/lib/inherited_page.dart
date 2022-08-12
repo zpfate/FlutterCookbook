@@ -21,6 +21,7 @@ class _InheritedPageState extends State<InheritedPage> {
 
 class CountContainer extends InheritedWidget {
   /// 方便其子Widget在Widget树中找到它
+  /// 该方法可以实现 也可以不实现
   static CountContainer? of(BuildContext context) {
     return context.dependOnInheritedWidgetOfExactType<CountContainer>();
   }
@@ -37,7 +38,6 @@ class CountContainer extends InheritedWidget {
   /// 该方法用于判断InheritedWidget是否需要重建,通知下层组件更新数据时被调用
   @override
   bool updateShouldNotify(CountContainer oldWidget) {
-    // TODO: implement updateShouldNotify
     return count != oldWidget.count;
   }
 }
@@ -47,15 +47,23 @@ class Counter extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    /// 获取InheritedWidget的根节点
-    CountContainer? state = CountContainer.of(context);
+    /// 实现了of方法,获取InheritedWidget的根节点
+    // CountContainer? inheritedWidget = CountContainer.of(context);
+
+    /// 未实现静态of方法
+    // ignore: unused_local_variable
+    var inheritedWidget =
+        context.dependOnInheritedWidgetOfExactType<CountContainer>();
+
     return Scaffold(
       appBar: AppBar(
         title: const Text("InheritedWidget demo"),
       ),
-      body: Text('You have pushed the button this many times: ${state?.count}'),
+      body: Text(
+          'You have pushed the button this many times: ${inheritedWidget?.count}'),
       backgroundColor: Colors.red,
-      floatingActionButton: FloatingActionButton(onPressed: state?.increment),
+      floatingActionButton:
+          FloatingActionButton(onPressed: inheritedWidget?.increment),
     );
   }
 }

@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 
 class KeyBox extends StatefulWidget {
-
   final Color color;
-  const KeyBox({Key? key,required this.color}) : super(key: key);
+  const KeyBox({Key? key, required this.color}) : super(key: key);
 
   @override
   _KeyBoxState createState() => _KeyBoxState();

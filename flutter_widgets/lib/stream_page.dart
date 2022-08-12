@@ -2,7 +2,7 @@ import 'dart:async';
 import 'dart:io';
 
 import 'package:flutter/material.dart';
-import 'package:flutter_widgets/tools/TFAppBar.dart';
+import 'package:flutter_widgets/tools/tf_app_bar.dart';
 import 'package:flutter_widgets/tools/log_util.dart';
 import 'package:flutter_widgets/tools/widget_bean.dart';
 class StreamPage extends StatelessWidget {

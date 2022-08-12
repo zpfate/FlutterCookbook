@@ -1,14 +1,10 @@
-
-
 import 'package:flutter/widgets.dart';
-
 
 void log() {
   logUtil(null);
 }
 
 void logUtil(String? message) {
-
   StackTrace current = StackTrace.current;
   var traceString = current.toString().split("\n")[1];
   List<String> components = traceString.split(".");
@@ -22,10 +18,6 @@ void logUtil(String? message) {
   functionName = components[1].split("(")[0];
   debugPrint("[$className] $functionName ${message ?? ""}");
 
-
-
-
-
   // var indexOfFileName = traceString.indexOf(RegExp(r'[A-Za-z_]+.dart'));
   // var fileInfo = traceString.substring(indexOfFileName);
   // var listOfInfos = fileInfo.split(":");
@@ -34,5 +26,4 @@ void logUtil(String? message) {
   // var columnStr = listOfInfos[2];
   // columnStr = columnStr.replaceFirst(")", "");
   // var columnNumber = int.parse(columnStr);
-
 }

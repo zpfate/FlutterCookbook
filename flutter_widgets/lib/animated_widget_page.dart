@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_widgets/tools/TFAppBar.dart';
+import 'package:flutter_widgets/tools/tf_app_bar.dart';
 
 class AnimatedWidgetPage extends StatefulWidget {
   const AnimatedWidgetPage({Key? key}) : super(key: key);
