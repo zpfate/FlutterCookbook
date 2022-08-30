@@ -2,6 +2,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_widgets/animated_builder_page.dart';
 import 'package:flutter_widgets/animated_widget_page.dart';
+import 'package:flutter_widgets/dart/test.dart';
 import 'package:flutter_widgets/dropdown_textfield.dart';
 import 'package:flutter_widgets/event_bus_page.dart';
 import 'package:flutter_widgets/future_page.dart';
@@ -30,7 +31,7 @@ void main() {
   FlutterError.onError = (FlutterErrorDetails details) async {
     Zone.current.handleUncaughtError(details.exception, details.stack!);
   };
- 
+
   ErrorWidget.builder = (FlutterErrorDetails flutterErrorDetails) {
     print(flutterErrorDetails.toString());
     return const Scaffold(
@@ -41,6 +42,12 @@ void main() {
 
   runZonedGuarded(() {
     runApp(const MyApp());
+
+    /// 测试dart
+    Person p = Person(name: "zpfate", age: 10);
+    p.printPerson();
+
+    // Person full = Person().f
   }, (error, stackTrace) async {
     await _reportError(error, stackTrace);
   });
