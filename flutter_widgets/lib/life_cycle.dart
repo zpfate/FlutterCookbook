@@ -9,23 +9,23 @@ class LifeCyclePage extends StatefulWidget {
   State<LifeCyclePage> createState() => _LifeCyclePageState();
 }
 
-class _LifeCyclePageState extends State<LifeCyclePage> with WidgetsBindingObserver {
-
+class _LifeCyclePageState extends State<LifeCyclePage>
+    with WidgetsBindingObserver {
   @override
   void initState() {
-    // TODO: implement initState
     log();
     super.initState();
 
     WidgetsBinding.instance.addObserver(this);
-
   }
 
   @override
   Widget build(BuildContext context) {
     log();
     return Scaffold(
-      appBar: AppBar(title: const Text("LifeCyclePage"),),
+      appBar: AppBar(
+        title: const Text("LifeCyclePage"),
+      ),
       body: Container(),
     );
   }

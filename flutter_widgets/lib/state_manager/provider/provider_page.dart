@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_widgets/state_manager/provider/change_notifier_widget.dart';
 import 'package:flutter_widgets/state_manager/provider/counter.dart';
+import 'package:flutter_widgets/state_manager/provider/multi_provider_page.dart';
 import 'package:flutter_widgets/tools/tf_app_bar.dart';
 import 'package:flutter_widgets/tools/navigator_extension.dart';
 import 'package:flutter_widgets/tools/widget_bean.dart';
@@ -16,18 +17,11 @@ class ProviderPage extends StatefulWidget {
 }
 
 class _ProviderPageState extends State<ProviderPage> {
-  List<ClickWidget> _data = [];
-
-  late Widget _currentWidget;
+  final List<ClickWidget> _data = [];
 
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
-
-    _data.addAll([
-      ClickWidget(widgetBean: WidgetBean(title: "FutureProvider")),
-    ]);
   }
 
   @override
@@ -42,20 +36,31 @@ class _ProviderPageState extends State<ProviderPage> {
               physics: const NeverScrollableScrollPhysics(),
               children: [
                 Wrap(
-                  children: _data,
+                  children: [
+                    ClickWidget(
+                      widgetBean: WidgetBean(
+                        title: "FutureProvider",
+                        page: const FutureProviderPage(),
+                      ),
+                    ),
+                    ClickWidget(
+                      widgetBean: WidgetBean(
+                        title: "ChangeNotifierProvider",
+                        page: ChangeNotifierPage(),
+                      ),
+                    ),
+                    ClickWidget(
+                      widgetBean: WidgetBean(
+                        title: "MultiProvider",
+                        page: const MultiProviderPage(),
+                      ),
+                    ),
+                  ],
                 ),
               ],
             ),
           ),
-          const Expanded(child: FutureProviderWidget()),
-          Expanded(child: ChangeNotifierWidget()),
         ],
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          Provider.of<Counter>(context).increment();
-        },
-        child: const Icon(Icons.add),
       ),
     );
   }

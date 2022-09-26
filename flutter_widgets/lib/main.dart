@@ -7,7 +7,7 @@ import 'package:flutter_widgets/dropdown_textfield.dart';
 import 'package:flutter_widgets/event_bus_page.dart';
 import 'package:flutter_widgets/future_page.dart';
 import 'package:flutter_widgets/hero_page.dart';
-import 'package:flutter_widgets/inherited_page.dart';
+import 'package:flutter_widgets/InheritedWidget/inherited_page.dart';
 import 'package:flutter_widgets/isolate_page.dart';
 import 'package:flutter_widgets/key/key_page.dart';
 import 'package:flutter_widgets/life_cycle.dart';
@@ -24,6 +24,7 @@ import 'package:flutter_widgets/stream_page.dart';
 import 'package:flutter_widgets/tools/log_util.dart';
 import 'package:flutter_widgets/touch_page.dart';
 import 'package:flutter_widgets/tools/widget_bean.dart';
+import 'package:get/route_manager.dart';
 import 'animation_page.dart';
 
 void main() {
@@ -67,7 +68,7 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return GetMaterialApp(
       title: 'Flutter Demo',
       //注册路由
       routes: {
@@ -116,7 +117,6 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
 
     List<WidgetBean> list = [

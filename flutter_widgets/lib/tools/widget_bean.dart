@@ -1,9 +1,7 @@
-
 import 'package:flutter/material.dart';
-import 'package:flutter_widgets/tools/navigator_extension.dart';
+import 'package:get/get.dart';
 
 class ClickWidget extends StatelessWidget {
-
   final WidgetBean widgetBean;
   const ClickWidget({Key? key, required this.widgetBean}) : super(key: key);
 
@@ -15,7 +13,8 @@ class ClickWidget extends StatelessWidget {
         child: Text(widgetBean.title),
         onPressed: () {
           if (widgetBean.page != null) {
-            push(context, widgetBean.page!);
+            // 路由跳转
+            Get.to(widgetBean.page);
           } else {
             if (widgetBean.onPressed != null) {
               widgetBean.onPressed!();
@@ -33,7 +32,6 @@ class ClickSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
     List<Widget> children = [];
     for (var element in sectionBean.list) {
       children.add(ClickWidget(widgetBean: element));
@@ -60,7 +58,6 @@ class ClickSection extends StatelessWidget {
 }
 
 class WidgetBean {
-
   final String title;
   final Widget? page;
   final Function()? onPressed;
@@ -68,7 +65,6 @@ class WidgetBean {
 }
 
 class SectionBean {
-
   String title;
   List<WidgetBean> list;
 

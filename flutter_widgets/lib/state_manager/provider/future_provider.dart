@@ -1,19 +1,24 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_widgets/tools/tf_app_bar.dart';
 import 'package:provider/provider.dart';
 
-class FutureProviderWidget extends StatelessWidget {
-  const FutureProviderWidget({Key? key}) : super(key: key);
+class FutureProviderPage extends StatelessWidget {
+  const FutureProviderPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: FutureProvider<int>(
-        //外面有一层Center的意思想表达Provider用在那里都行，不一定非要在根布局，当然根布局的范围最广
-        initialData: 12,
-        create: (context) => Future.value(42),
-        child: const FutureProviderChild(),
-      ),
-    );
+    return Scaffold(
+        appBar: defaultAppBar(title: "FutureProvider"),
+        body: Center(
+          child: FutureProvider<int>(
+            //外面有一层Center的意思想表达Provider用在那里都行，不一定非要在根布局，当然根布局的范围最广
+            initialData: 12,
+            create: (context) => Future.delayed(const Duration(seconds: 1), () {
+              return 444;
+            }),
+            child: const FutureProviderChild(),
+          ),
+        ));
   }
 }
 
