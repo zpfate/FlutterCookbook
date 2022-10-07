@@ -1,11 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_widgets/state_manager/provider/change_notifier_widget.dart';
-import 'package:flutter_widgets/state_manager/provider/counter.dart';
 import 'package:flutter_widgets/state_manager/provider/multi_provider_page.dart';
 import 'package:flutter_widgets/tools/tf_app_bar.dart';
-import 'package:flutter_widgets/tools/navigator_extension.dart';
 import 'package:flutter_widgets/tools/widget_bean.dart';
-import 'package:provider/provider.dart';
 
 import 'future_provider.dart';
 

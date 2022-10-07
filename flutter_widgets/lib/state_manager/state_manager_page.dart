@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_widgets/state_manager/getx/getx_page.dart';
 import 'package:flutter_widgets/state_manager/provider/provider_page.dart';
 import 'package:flutter_widgets/tools/tf_app_bar.dart';
 
@@ -22,14 +23,15 @@ class StateManagerPage extends StatelessWidget {
                 page: const ProviderPage(),
               ),
             ),
+            ClickWidget(
+              widgetBean: WidgetBean(
+                title: "GetX",
+                page: const GetXPage(),
+              ),
+            ),
           ],
         ),
       ),
     );
   }
-
-
-
-
-
 }

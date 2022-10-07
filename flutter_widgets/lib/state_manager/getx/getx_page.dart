@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_widgets/state_manager/getx/getx_page_controller.dart';
 import 'package:flutter_widgets/tools/tf_app_bar.dart';
+import 'package:flutter_widgets/tools/widget_bean.dart';
 import 'package:get/get.dart';
 
 class GetXPage extends StatefulWidget {
@@ -17,10 +18,43 @@ class _GetXPageState extends State<GetXPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: defaultAppBar(title: "GetX"),
-      body: GetBuilder(
-        builder: (controller) {
-          return Container();
+      body: Column(
+        children: [
+          ClickWidget(
+              widgetBean: WidgetBean(
+                  title: "snackbar",
+                  onPressed: () {
+                    Get.snackbar("标题", "这是一个snackbar");
+                  })),
+          ClickWidget(
+              widgetBean: WidgetBean(
+                  title: "defaultDialog",
+                  onPressed: () {
+                    Get.defaultDialog(
+                        title: "标题", content: const Text("这是一个defaultDialogs"));
+                  })),
+          Container(
+              height: 200,
+              width: 200,
+              color: Colors.red,
+              child: Obx(
+                () => Text(
+                  _controller.count.toString(),
+                  style: const TextStyle(fontSize: 25, color: Colors.green),
+                ),
+              )),
+          GetBuilder(
+            builder: (GetXPageController controller) {
+              return Container();
+            },
+          ),
+        ],
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          _controller.increment();
         },
+        child: const Icon(Icons.add),
       ),
     );
   }
