@@ -31,7 +31,7 @@ class _GetXPageState extends State<GetXPage> {
                   title: "defaultDialog",
                   onPressed: () {
                     Get.defaultDialog(
-                        title: "标题", content: const Text("这是一个defaultDialogs"));
+                        title: "标题", content: const Text("这是一个defaultDialog"));
                   })),
           ClickWidget(
               widgetBean: WidgetBean(
