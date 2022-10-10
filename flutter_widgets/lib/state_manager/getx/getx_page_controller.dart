@@ -3,7 +3,10 @@ import 'package:get/get.dart';
 class GetXPageController extends GetxController {
   RxInt count = 0.obs;
 
-  increment() => count++;
+  increment() {
+    count++;
+    update();
+  }
 
   @override
   void onInit() {
@@ -23,6 +26,11 @@ class GetXPageController extends GetxController {
     /// 停止输入1s后调用
     debounce(count, (value) {
       print("debounce" + value.toString());
+    }, time: const Duration(seconds: 1));
+
+    /// 每隔一秒执行一次
+    interval(count, (value) {
+      print("interval" + value.toString());
     }, time: const Duration(seconds: 1));
   }
 
