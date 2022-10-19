@@ -12,18 +12,26 @@ class ChangeNotifierPage extends StatelessWidget {
       appBar: defaultAppBar(title: "ChangeNotifierProvider"),
       body: ChangeNotifierProvider.value(
         value: _counter,
-        child: const ConsumerWidget(),
+        child: Consumer<Counter>(builder: (ctx, model, child) {
+          return Center(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                const Text("Current count is"),
+                Text(
+                  "${model.counter}",
+                  style: const TextStyle(color: Colors.red, fontSize: 25),
+                )
+              ],
+            ),
+          );
+        }),
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () => _counter.increment(),
+        child: const Icon(Icons.add),
       ),
     );
-  }
-}
-
-class ConsumerWidget extends StatelessWidget {
-  const ConsumerWidget({Key? key}) : super(key: key);
-  @override
-  Widget build(BuildContext context) {
-    return Consumer<Counter>(builder: (ctx, model, child) {
-      return Text("${model.counter}");
-    });
   }
 }

@@ -2,6 +2,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_widgets/animated_builder_page.dart';
 import 'package:flutter_widgets/animated_widget_page.dart';
+import 'package:flutter_widgets/dart/change_notifier_page.dart';
 import 'package:flutter_widgets/dart/test.dart';
 import 'package:flutter_widgets/dropdown_textfield.dart';
 import 'package:flutter_widgets/event_bus_page.dart';
@@ -11,6 +12,7 @@ import 'package:flutter_widgets/InheritedWidget/inherited_page.dart';
 import 'package:flutter_widgets/isolate_page.dart';
 import 'package:flutter_widgets/key/key_page.dart';
 import 'package:flutter_widgets/life_cycle.dart';
+import 'package:flutter_widgets/listener_page.dart';
 import 'package:flutter_widgets/local_storage/local_storage_page.dart';
 import 'package:flutter_widgets/method_channel/method_channel_page.dart';
 import 'package:flutter_widgets/network.dart';
@@ -18,6 +20,7 @@ import 'package:flutter_widgets/notification.dart';
 import 'package:flutter_widgets/platform_view_page.dart';
 import 'package:flutter_widgets/route_page.dart';
 import 'package:flutter_widgets/sliver.dart';
+import 'package:flutter_widgets/state_manager/provider/change_notifier_widget.dart';
 import 'package:flutter_widgets/state_manager/state_manager_page.dart';
 import 'package:flutter_widgets/stream_builder_page.dart';
 import 'package:flutter_widgets/stream_page.dart';
@@ -123,12 +126,13 @@ class _MyHomePageState extends State<MyHomePage> {
       WidgetBean(title: "Lifecycle", page: const LifeCyclePage()),
       WidgetBean(title: "Sliver", page: const SliverPage()),
       WidgetBean(title: "CustomPaint", page: const CustomPaint()),
-      WidgetBean(title: "Listener", page: const Listener()),
+      WidgetBean(title: "Listener", page: const ListenerPage()),
       WidgetBean(title: "GestureDetector", page: const GestureDetectorPage()),
       WidgetBean(title: "RawGestureDetector", page: const RawGestureDetector()),
       WidgetBean(title: "InheritedWidget", page: const InheritedPage()),
       WidgetBean(title: "Notification", page: const NotificationPage()),
       WidgetBean(title: "EventBus", page: const EventBusPage()),
+      WidgetBean(title: "ChangeNotifier", page: ChangeNotifierDemoPage()),
       WidgetBean(title: "Route", page: const RoutePage()),
       WidgetBean(title: "Animation", page: const AnimationPage()),
       WidgetBean(title: "AnimatedWidget", page: const AnimatedWidgetPage()),

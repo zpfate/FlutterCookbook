@@ -25,9 +25,9 @@ class _GetXPageState extends State<GetXPage> {
         children: [
           ClickWidget(
               widgetBean: WidgetBean(
-                  title: "snackbar",
+                  title: "snackBar",
                   onPressed: () {
-                    Get.snackbar("标题", "这是一个snackbar");
+                    Get.snackbar("标题", "这是一个snackBar");
                   })),
           ClickWidget(
               widgetBean: WidgetBean(

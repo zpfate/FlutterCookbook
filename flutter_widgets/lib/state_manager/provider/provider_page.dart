@@ -49,7 +49,7 @@ class _ProviderPageState extends State<ProviderPage> {
                     ClickWidget(
                       widgetBean: WidgetBean(
                         title: "MultiProvider",
-                        page: const MultiProviderPage(),
+                        page: MultiProviderPage(),
                       ),
                     ),
                   ],
