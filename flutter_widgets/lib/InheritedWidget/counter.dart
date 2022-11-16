@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_widgets/InheritedWidget/counter_inherited_widget.dart';
+import 'package:flutter_widgets/tools/log_util.dart';
 
 class StatelessCounter extends StatelessWidget {
   const StatelessCounter({Key? key}) : super(key: key);
@@ -7,11 +8,12 @@ class StatelessCounter extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     /// 实现了of方法,获取InheritedWidget的根节点
-    // CountContainer? inheritedWidget = CountContainer.of(context);
+    CounterInheritedWidget? inheritedWidget =
+        CounterInheritedWidget.of(context);
 
     /// 未实现静态of方法
-    var inheritedWidget =
-        context.dependOnInheritedWidgetOfExactType<CounterInheritedWidget>();
+    // var inheritedWidget =
+    //     context.dependOnInheritedWidgetOfExactType<CounterInheritedWidget>();
 
     return Container(
       width: 100,
@@ -19,7 +21,7 @@ class StatelessCounter extends StatelessWidget {
       color: Colors.redAccent,
       alignment: Alignment.center,
       child: Text(
-        CounterInheritedWidget.of(context)!.count.toString(),
+        "${CounterInheritedWidget.of(context)!.count}",
         style: const TextStyle(fontSize: 20),
       ),
     );
@@ -35,6 +37,12 @@ class StatefulCounter extends StatefulWidget {
 
 class _StatefulCounterState extends State<StatefulCounter> {
   @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    debugPrint("didChangeDependencies");
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Container(
       width: 100,
@@ -42,7 +50,7 @@ class _StatefulCounterState extends State<StatefulCounter> {
       color: Colors.greenAccent,
       alignment: Alignment.center,
       child: Text(
-        CounterInheritedWidget.of(context)!.count.toString(),
+        "${CounterInheritedWidget.of(context)!.count}",
         style: const TextStyle(fontSize: 20),
       ),
     );

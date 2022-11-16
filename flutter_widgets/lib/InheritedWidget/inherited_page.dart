@@ -27,7 +27,14 @@ class _InheritedPageState extends State<InheritedPage> {
           ),
         ),
       ),
-      floatingActionButton: FloatingActionButton(onPressed: (() => _count++)),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          setState(() {
+            _count++;
+          });
+        },
+        child: const Icon(Icons.add),
+      ),
     );
   }
 }

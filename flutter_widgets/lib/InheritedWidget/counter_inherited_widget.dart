@@ -17,7 +17,7 @@ class CounterInheritedWidget extends InheritedWidget {
   /// 是否通知widget树中依赖该共享数据的子widget
   /// 这里当count发生变化时, 是否通知子树中所有依赖count的Widget重新build
   @override
-  bool updateShouldNotify(covariant InheritedWidget oldWidget) {
-    return count != oldWidget.child;
+  bool updateShouldNotify(covariant CounterInheritedWidget oldWidget) {
+    return count != oldWidget.count;
   }
 }

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_widgets/tools/log_util.dart';
 
 class TouchPage extends StatelessWidget {
   const TouchPage({Key? key}) : super(key: key);
@@ -19,16 +20,14 @@ class TouchPage extends StatelessWidget {
                 width: 300,
                 height: 300,
               ),
-              onPointerDown: (event) => print("down $event"), //手势按下回调
-              onPointerMove: (event) => print("move $event"), //手势移动回调
-              onPointerUp: (event) => print("up $event"), //手势抬起回调);,
+              onPointerDown: (event) => logUtil("down $event"), //手势按下回调
+              onPointerMove: (event) => logUtil("move $event"), //手势移动回调
+              onPointerUp: (event) => logUtil("up $event"), //手势抬起回调);,
             ),
           ],
-        )
-    );
+        ));
   }
 }
-
 
 class GestureDetectorPage extends StatefulWidget {
   const GestureDetectorPage({Key? key}) : super(key: key);
@@ -45,7 +44,9 @@ class _GestureDetectorPageState extends State<GestureDetectorPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('GestureDetector'),),
+      appBar: AppBar(
+        title: const Text('GestureDetector'),
+      ),
       body: Stack(
         //使用Stack组件去叠加视图，便于直接控制视图坐标
         children: <Widget>[
@@ -54,8 +55,8 @@ class _GestureDetectorPageState extends State<GestureDetectorPage> {
             left: _left,
             child: GestureDetector(
               //手势识别
-              child: Container(
-                  color: Colors.red, width: 50, height: 50), //红色子视图
+              child:
+                  Container(color: Colors.red, width: 50, height: 50), //红色子视图
               onTap: () => print("Tap"), //点击回调
               onDoubleTap: () => print("Double Tap"), //双击回调
               onLongPress: () => print("Long Press"), //长按回调

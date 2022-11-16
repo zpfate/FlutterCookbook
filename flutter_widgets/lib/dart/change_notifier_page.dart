@@ -9,11 +9,18 @@ class Counter extends ChangeNotifier {
     _count++;
     notifyListeners();
   }
+
+  @override
+  void dispose() {
+    // TODO: implement dispose
+    super.dispose();
+  }
 }
 
 class ChangeNotifierDemoPage extends StatefulWidget {
   const ChangeNotifierDemoPage({Key? key}) : super(key: key);
 
+  @override
   State<ChangeNotifierDemoPage> createState() => _ChangeNotifierDemoPageState();
 }
 
@@ -25,6 +32,13 @@ class _ChangeNotifierDemoPageState extends State<ChangeNotifierDemoPage> {
       setState(() {});
     });
     super.initState();
+  }
+
+  @override
+  void dispose() {
+    // TODO: implement dispose
+    _counter.dispose();
+    super.dispose();
   }
 
   @override
