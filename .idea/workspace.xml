@@ -5,9 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="75227663-a6a6-423e-ba00-efb5ae429f2f" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/provider_demo/lib/future_builder_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/provider_demo/lib/page/future_builder_page.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/provider_demo/lib/global_key_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/provider_demo/lib/page/global_key_page.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/provider_demo/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/provider_demo/lib/main.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Notification/app/src/main/java/com/example/notification/NotificationActivity.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Notification/app/src/main/res/drawable-v24/test.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Notification/app/src/main/res/drawable/ic_baseline_4k_24.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Notification/app/src/main/res/drawable/ic_baseline_5g_24.xml" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,7 +25,10 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="RunOnceActivity.cidr.known.project.marker" value="true" />
     <property name="android.sdk.path" value="$USER_HOME$/Library/Android/sdk" />
+    <property name="cidr.known.project.marker" value="true" />
     <property name="dart.analysis.tool.window.visible" value="false" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="show.migrate.to.gradle.popup" value="false" />
