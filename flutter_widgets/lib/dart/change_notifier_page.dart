@@ -4,16 +4,9 @@ import 'package:flutter_widgets/tools/tf_app_bar.dart';
 class Counter extends ChangeNotifier {
   int _count = 0;
   int get count => _count;
-
   increment() {
     _count++;
     notifyListeners();
-  }
-
-  @override
-  void dispose() {
-    // TODO: implement dispose
-    super.dispose();
   }
 }
 
@@ -32,13 +25,6 @@ class _ChangeNotifierDemoPageState extends State<ChangeNotifierDemoPage> {
       setState(() {});
     });
     super.initState();
-  }
-
-  @override
-  void dispose() {
-    // TODO: implement dispose
-    _counter.dispose();
-    super.dispose();
   }
 
   @override
@@ -67,5 +53,12 @@ class _ChangeNotifierDemoPageState extends State<ChangeNotifierDemoPage> {
         child: const Icon(Icons.add),
       ),
     );
+  }
+
+  @override
+  void dispose() {
+    // TODO: implement dispose
+    _counter.dispose();
+    super.dispose();
   }
 }

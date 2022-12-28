@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_widgets/InheritedWidget/counter_inherited_widget.dart';
-import 'package:flutter_widgets/tools/log_util.dart';
 
 class StatelessCounter extends StatelessWidget {
   const StatelessCounter({Key? key}) : super(key: key);
