@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_widgets/InheritedWidget/counter.dart';
-import 'package:flutter_widgets/InheritedWidget/counter_inherited_widget.dart';
 import 'package:flutter_widgets/tools/tf_app_bar.dart';
+import 'package:flutter_widgets/widgets/InheritedWidget/counter.dart';
+import 'package:flutter_widgets/widgets/InheritedWidget/counter_inherited_widget.dart';
 
 class InheritedPage extends StatefulWidget {
   const InheritedPage({Key? key}) : super(key: key);

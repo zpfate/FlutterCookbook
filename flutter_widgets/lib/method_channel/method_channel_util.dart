@@ -5,7 +5,6 @@ import 'package:flutter_widgets/tools/log_util.dart';
 class MethodChannelUtil {
 
   /// 原生代码部分在ios appdelegate中
-
   static const methodChannel =  MethodChannel(
       "samples.zpfate/utils");
   static openAppMarket() async {
@@ -27,11 +26,11 @@ class MethodChannelUtil {
   /// 其在iOS端使用了NSJSONSerialization作为序列化的工具，而在Android端则使用了其自定义的JSONUtil与StringCodec作为序列化工具。
   ///
   /// StandardMessageCodec:是BasicMessageChannel的默认编解码器，其支持基础数据类型、二进制数据、列表、字典
-  static const basicMethodChannel = BasicMessageChannel("samples.zpfate/utils", StandardMessageCodec());
+  static const messageChannel = BasicMessageChannel("samples.zpfate/utils", StandardMessageCodec());
   static openAppMarket2() async {
     dynamic result;
     try {
-      result = await basicMethodChannel.send('openAppMarket');
+      result = await messageChannel.send('openAppMarket');
     } catch (e) {
       result = 1;
     }

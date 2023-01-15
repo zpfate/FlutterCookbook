@@ -1,34 +1,32 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
-import 'package:flutter_widgets/animated_builder_page.dart';
-import 'package:flutter_widgets/animated_widget_page.dart';
-import 'package:flutter_widgets/dart/change_notifier_page.dart';
-import 'package:flutter_widgets/dart/test.dart';
-import 'package:flutter_widgets/dropdown_textfield.dart';
-import 'package:flutter_widgets/event_bus_page.dart';
-import 'package:flutter_widgets/future_page.dart';
-import 'package:flutter_widgets/hero_page.dart';
-import 'package:flutter_widgets/InheritedWidget/inherited_page.dart';
-import 'package:flutter_widgets/isolate_page.dart';
 import 'package:flutter_widgets/key/key_page.dart';
-import 'package:flutter_widgets/life_cycle.dart';
-import 'package:flutter_widgets/listener_page.dart';
+import 'package:flutter_widgets/widgets/InheritedWidget/inherited_page.dart';
+import 'package:flutter_widgets/widgets/animated_builder_page.dart';
+import 'package:flutter_widgets/dart/change_notifier_demo.dart';
+import 'package:flutter_widgets/widgets/animated_widget_page.dart';
+import 'package:flutter_widgets/widgets/animation_page.dart';
+import 'package:flutter_widgets/widgets/dropdown_textfield.dart';
+import 'package:flutter_widgets/widgets/event_bus_page.dart';
+import 'package:flutter_widgets/widgets/future_page.dart';
+import 'package:flutter_widgets/widgets/hero_page.dart';
+import 'package:flutter_widgets/widgets/isolate_page.dart';
+import 'package:flutter_widgets/widgets/life_cycle.dart';
+import 'package:flutter_widgets/widgets/listener_page.dart';
 import 'package:flutter_widgets/local_storage/local_storage_page.dart';
 import 'package:flutter_widgets/method_channel/method_channel_page.dart';
 import 'package:flutter_widgets/network.dart';
-import 'package:flutter_widgets/notification.dart';
-import 'package:flutter_widgets/platform_view_page.dart';
-import 'package:flutter_widgets/route_page.dart';
-import 'package:flutter_widgets/sliver.dart';
-import 'package:flutter_widgets/state_manager/provider/change_notifier_widget.dart';
+import 'package:flutter_widgets/widgets/notification.dart';
+import 'package:flutter_widgets/widgets/platform_view_page.dart';
 import 'package:flutter_widgets/state_manager/state_manager_page.dart';
-import 'package:flutter_widgets/stream_builder_page.dart';
-import 'package:flutter_widgets/stream_page.dart';
 import 'package:flutter_widgets/tools/log_util.dart';
-import 'package:flutter_widgets/touch_page.dart';
 import 'package:flutter_widgets/tools/widget_bean.dart';
+import 'package:flutter_widgets/widgets/route_page.dart';
+import 'package:flutter_widgets/widgets/sliver.dart';
+import 'package:flutter_widgets/widgets/stream_builder_page.dart';
+import 'package:flutter_widgets/widgets/stream_page.dart';
+import 'package:flutter_widgets/widgets/touch_page.dart';
 import 'package:get/route_manager.dart';
-import 'animation_page.dart';
 
 void main() {
   // This captures errors reported by the Flutter framework.
@@ -47,9 +45,7 @@ void main() {
   runZonedGuarded(() {
     runApp(const MyApp());
 
-    /// 测试dart
-    Person p = Person(name: "zpfate", age: 10);
-    p.printPerson();
+
 
     // Person full = Person().f
   }, (error, stackTrace) async {
@@ -81,15 +77,6 @@ class MyApp extends StatelessWidget {
       onUnknownRoute: (RouteSettings setting) =>
           MaterialPageRoute(builder: (context) => const RouteUnknownPage()),
       theme: ThemeData(
-        // This is the theme of your application.
-        //
-        // Try running your application with "flutter run". You'll see the
-        // application has a blue toolbar. Then, without quitting the app, try
-        // changing the primarySwatch below to Colors.green and then invoke
-        // "hot reload" (press "r" in the console where you ran "flutter run",
-        // or simply save your changes to "hot reload" in a Flutter IDE).
-        // Notice that the counter didn't reset back to zero; the application
-        // is not restarted.
         primarySwatch: Colors.blue,
       ),
       home: const MyHomePage(title: 'Flutter Demo Home Page'),
@@ -98,16 +85,8 @@ class MyApp extends StatelessWidget {
 }
 
 class MyHomePage extends StatefulWidget {
+
   const MyHomePage({Key? key, required this.title}) : super(key: key);
-
-  // This widget is the home page of your application. It is stateful, meaning
-  // that it has a State object (defined below) that contains fields that affect
-  // how it looks.
-
-  // This class is the configuration for the state. It holds the values (in this
-  // case the title) provided by the parent (in this case the App widget) and
-  // used by the build method of the State. Fields in a Widget subclass are
-  // always marked "final".
 
   final String title;
 

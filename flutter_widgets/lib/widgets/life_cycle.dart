@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'tools/log_util.dart';
+import '../tools/log_util.dart';
 
 class LifeCyclePage extends StatefulWidget {
   const LifeCyclePage({Key? key}) : super(key: key);
