@@ -1,28 +1,6 @@
 
 import 'package:flutter/foundation.dart';
 
-void main() {
-
-  final p = Person(1, name: "alex", age: 12);
-  /// 可选参数
-  final now = DateTime.now();
-  p.studyTween(now);
-  p.studyTween(now, DateTime.now().add(const Duration(hours: 3)));
-
-
-  /// 级联
-  p..printInfo()..sleep();
-  p..name = "Jack"
-    ..age = 24
-    ..id = 2;
-  p.printInfo();
-
-  /// ...的作用
-  final List<int> values = [1, 2, 3, 4];
-  List<int> array = [0, 2, ...values];
-  debugPrint("array = $array");
-}
-
 class Person {
   /// Null Safe
   int id;
@@ -44,5 +22,28 @@ class Person {
   studyTween(DateTime startTime, [DateTime? endTime]) {
     debugPrint("stduy ---");
   }
+}
+
+
+void main() {
+
+  final p = Person(1, name: "alex", age: 12);
+  /// 可选参数
+  final now = DateTime.now();
+  p.studyTween(now);
+  p.studyTween(now, DateTime.now().add(const Duration(hours: 3)));
+
+
+  /// 级联
+  p..printInfo()..sleep();
+  p..name = "Jack"
+    ..age = 24
+    ..id = 2;
+  p.printInfo();
+
+  /// ...的作用
+  final List<int> values = [1, 2, 3, 4];
+  List<int> array = [0, 2, ...values];
+  debugPrint("array = $array");
 }
 

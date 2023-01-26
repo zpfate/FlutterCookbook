@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_demo/getx/getx_demo.dart';
+import 'package:flutter_demo/getx/getx_list_page.dart';
 import 'package:flutter_demo/list_view.dart';
 
 void main() {
@@ -49,6 +51,7 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+
   int _counter = 0;
 
   void _incrementCounter() {
@@ -68,7 +71,6 @@ class _MyHomePageState extends State<MyHomePage> {
       body: Center(
 
         child: Column(
-
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             const Text(
@@ -83,6 +85,13 @@ class _MyHomePageState extends State<MyHomePage> {
               Navigator.of(context).push(MaterialPageRoute(builder: (context)=> const ListViewPage()));
             }, child: const Text("ListView")),
 
+            ElevatedButton(onPressed: () {
+              Navigator.of(context).push(MaterialPageRoute(builder: (context)=> const GetxDemoPage()));
+            }, child: const Text("GetX Counter")),
+
+            ElevatedButton(onPressed: () {
+              Navigator.of(context).push(MaterialPageRoute(builder: (context)=> const GetxListPage()));
+            }, child: const Text("GetX List")),
             // Image.asset("name"),
 
           ],
