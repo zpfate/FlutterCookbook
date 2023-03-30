@@ -13,8 +13,8 @@ class ClickWidget extends StatelessWidget {
         child: Text(widgetBean.title),
         onPressed: () {
           if (widgetBean.page != null) {
-            // 路由跳转
-            Get.to(widgetBean.page);
+            /// 路由跳转
+            Get.to(()=> widgetBean.page!);
           } else {
             if (widgetBean.onPressed != null) {
               widgetBean.onPressed!();

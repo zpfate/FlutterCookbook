@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_widgets/key/key_page.dart';
 import 'package:flutter_widgets/widgets/InheritedWidget/inherited_page.dart';
@@ -6,6 +7,7 @@ import 'package:flutter_widgets/widgets/animated_builder_page.dart';
 import 'package:flutter_widgets/dart/change_notifier_demo.dart';
 import 'package:flutter_widgets/widgets/animated_widget_page.dart';
 import 'package:flutter_widgets/widgets/animation_page.dart';
+import 'package:flutter_widgets/widgets/custom_paint.dart';
 import 'package:flutter_widgets/widgets/dropdown_textfield.dart';
 import 'package:flutter_widgets/widgets/event_bus_page.dart';
 import 'package:flutter_widgets/widgets/future_page.dart';
@@ -67,6 +69,7 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
+
     return GetMaterialApp(
       title: 'Flutter Demo',
       //注册路由
@@ -104,7 +107,7 @@ class _MyHomePageState extends State<MyHomePage> {
     List<WidgetBean> list = [
       WidgetBean(title: "Lifecycle", page: const LifeCyclePage()),
       WidgetBean(title: "Sliver", page: const SliverPage()),
-      WidgetBean(title: "CustomPaint", page: const CustomPaint()),
+      WidgetBean(title: "CustomPaint", page: const CustomPaintPage()),
       WidgetBean(title: "Listener", page: const ListenerPage()),
       WidgetBean(title: "GestureDetector", page: const GestureDetectorPage()),
       WidgetBean(title: "RawGestureDetector", page: const RawGestureDetector()),

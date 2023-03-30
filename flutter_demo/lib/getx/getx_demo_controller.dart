@@ -11,4 +11,11 @@ class GetxDemoController extends GetxController {
     counter++;
   }
 
+
+  int count = 0;
+  void incrementCount() {
+    count++;
+    update();
+  }
+
 }

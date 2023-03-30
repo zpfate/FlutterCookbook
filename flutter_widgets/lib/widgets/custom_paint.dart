@@ -12,11 +12,44 @@ class CustomPaintPage extends StatelessWidget {
       appBar: AppBar(title: const Text("CustomPainter"),),
       body: CustomPaint(
         size: const Size(200, 200),
-        painter: WheelPainter(),
+        painter: CirclePainter(),
       ),
     );
   }
 }
+
+
+
+class CirclePainter extends CustomPainter {
+
+
+
+  void paint(Canvas canvas, Size size) {
+
+    final Paint _paint = Paint()
+      ..color = Colors.blueAccent
+      ..style = PaintingStyle.stroke
+      ..strokeWidth = 5;
+
+    final Paint _paint2 = Paint()
+      ..color = Colors.redAccent
+      ..style = PaintingStyle.stroke
+      ..strokeWidth = 5;
+
+    const Rect rect = Rect.fromLTRB(50, 50, 150, 150);
+    const Rect rect2 = Rect.fromLTRB(60, 60, 150, 150);
+
+    /// 参数依次是：矩形范围、开始弧度、结束弧度、是否连接圆心、画笔
+    canvas.drawArc(rect, 0, pi + 1, false, _paint2);
+    canvas.drawArc(rect2, pi, pi +1, false, _paint);
+
+
+  }
+// 判断是否需要重绘，这里我们简单的做下比较即可
+  @override
+  bool shouldRepaint(CustomPainter oldDelegate) => oldDelegate != this;
+}
+
 
 class WheelPainter extends CustomPainter {
 
