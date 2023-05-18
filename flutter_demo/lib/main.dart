@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_demo/drop_header/hovering_header_list_demo.dart';
 import 'package:flutter_demo/getx/getx_demo.dart';
+import 'package:flutter_demo/getx/login_page.dart';
 import 'package:flutter_demo/list_view.dart';
 import 'package:flutter_demo/widget/key_page.dart';
 
@@ -82,10 +82,14 @@ class _MyHomePageState extends State<MyHomePage> {
               '$_counter',
               style: Theme.of(context).textTheme.headline4,
             ),
+            // ElevatedButton(onPressed: () {
+            //   Navigator.of(context).push(MaterialPageRoute(builder: (context)=>  HoveringHeaderListDemo()));
+            // }, child: const Text("ListView Drop Header")),
+
 
             ElevatedButton(onPressed: () {
-              Navigator.of(context).push(MaterialPageRoute(builder: (context)=>  HoveringHeaderListDemo()));
-            }, child: const Text("ListView Drop Header")),
+              Navigator.of(context).push(MaterialPageRoute(builder: (context)=> const LoginPage()));
+            }, child: const Text("LoginPage")),
 
             ElevatedButton(onPressed: () {
               Navigator.of(context).push(MaterialPageRoute(builder: (context)=> const ListViewPage()));
@@ -98,9 +102,7 @@ class _MyHomePageState extends State<MyHomePage> {
             ElevatedButton(onPressed: () {
               Navigator.of(context).push(MaterialPageRoute(builder: (context)=> const KeyPage()));
             }, child: const Text("Flutter Demo")),
-
             // Image.asset("name"),
-
           ],
         ),
       ),
