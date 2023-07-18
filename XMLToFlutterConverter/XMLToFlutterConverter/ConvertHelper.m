@@ -6,9 +6,9 @@
 //
 
 #import "ConvertHelper.h"
-#import "CustomWidget.h"
+#import "Widget.h"
 #import "StatelessWidget.h"
-#import "ElevatedButton.h"
+#import "TextButton.h"
 @implementation ConvertHelper
 
 static NSDictionary *definitionDictionary = nil;
@@ -19,10 +19,10 @@ static NSDictionary *definitionDictionary = nil;
     };
 }
 
-+ (CustomWidget *)convertClass:(NSString *)widgetName {
++ (Widget *)convertClass:(NSString *)widgetName {
     if (definitionDictionary == nil) {
         definitionDictionary = @{
-            @"Button": [ElevatedButton class],
+            @"Button": [TextButton class],
             @"StatelessWidget" : [StatelessWidget class],
         };
     }
@@ -33,7 +33,7 @@ static NSDictionary *definitionDictionary = nil;
     return @"import 'package:flutter/material.dart';\n\n;";
 }
 
-+ (NSString *)converterButton:(NSDictionary *)attrs {
++ (NSString *)convertButton:(NSDictionary *)attrs {
     return @"";
 }
 

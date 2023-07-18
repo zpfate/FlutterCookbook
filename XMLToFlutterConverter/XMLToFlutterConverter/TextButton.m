@@ -5,9 +5,9 @@
 //  Created by fate on 2023/7/18.
 //
 
-#import "ElevatedButton.h"
+#import "TextButton.h"
 
-@implementation ElevatedButton
+@implementation TextButton
 /**
  ElevatedButton(
            child: Text("审核完成"),
@@ -35,12 +35,30 @@
  */
 - (NSString *)createWidget:(NSDictionary *)attrs {
     
-    NSArray *allKeys = attrs.allKeys;
-    for (NSString *key in allKeys) {
-        
-        
-    }
-    return @"";
+    NSString *color = attrs[@"color"];
+    NSString *bgColor = attrs[@"bgColor"];
+    NSString *fontSize = attrs[@"fontSize"];
+    NSString *borderRadius = attrs[@"borderRadius"];
+    NSString *borderColor = attrs[@"borderColor"];
+    NSString *marginTop = attrs[@"marginTop"];
+    NSString *marginBottom = attrs[@"marginBottom"];
+    NSString *marginLeft = attrs[@"marginLeft"];
+    NSString *marginRight = attrs[@"marginRight"];
+
+    return @"TextButton(\
+                onPressed: () {},\
+                child: const Text('$text',),\
+                style: TextButton.styleFrom(\
+                padding: const EdgeInsets.only(top: 15, bottom: 10, left: 10, right: 10),\
+                backgroundColor: Colors.green,\
+                foregroundColor: Colors.red,\
+                side: const BorderSide(color: Colors.black, width: 1),\
+                textStyle: const TextStyle(fontSize: 20, color: Colors.red),\
+                shape: RoundedRectangleBorder(\
+                    borderRadius: BorderRadius.circular(4),\
+                    ),\
+                ),\
+        ),";
 }
 
 @end

@@ -26,7 +26,20 @@ class _LifeCyclePageState extends State<LifeCyclePage>
       appBar: AppBar(
         title: const Text("LifeCyclePage"),
       ),
-      body: Container(),
+      body: TextButton(
+        onPressed: () {},
+        child: const Text('Enabled',),
+        style: TextButton.styleFrom(
+          padding: const EdgeInsets.only(top: 15, bottom: 10, left: 10, right: 10),
+          backgroundColor: Colors.green,
+          foregroundColor: Colors.red,
+            side: const BorderSide(color: Colors.black, width: 1),
+            textStyle: const TextStyle(fontSize: 20, color: Colors.red),
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(4),
+          ),
+        ),
+      ),
     );
   }
 

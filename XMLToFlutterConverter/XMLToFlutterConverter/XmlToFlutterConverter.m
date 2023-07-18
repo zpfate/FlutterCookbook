@@ -1,6 +1,6 @@
 #import "XmlToFlutterConverter.h"
 #import "ConvertHelper.h"
-#import "CustomWidget.h"
+#import "Widget.h"
 @interface XmlToFlutterConverter ()
 
 @property(nonatomic, strong) NSMutableArray *widgetStack;
@@ -43,9 +43,8 @@
     if ([replacedKeyDictionary.allKeys containsObject:elementName]) {
         clsName = replacedKeyDictionary[elementName];
     }
-    CustomWidget *customWidget = [[[ConvertHelper convertClass:clsName] class] new];
+    Widget *customWidget = [[[ConvertHelper convertClass:clsName] class] new];
     NSString *resultStr = [customWidget createWidget:attributeDict];
-    
     
     
     [self.widgetStack addObject:resultStr];

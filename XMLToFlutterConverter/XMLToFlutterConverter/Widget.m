@@ -1,15 +1,14 @@
 //
-//  CustomWidget.m
+//  Widget.m
 //  XMLToFlutterConverter
 //
 //  Created by fate on 2023/7/18.
 //
 
-#import "CustomWidget.h"
-@implementation CustomWidget
+#import "Widget.h"
+@implementation Widget
 
 - (NSString *)createWidget:(NSDictionary *)attrs {
-
     return @"";
 }
 

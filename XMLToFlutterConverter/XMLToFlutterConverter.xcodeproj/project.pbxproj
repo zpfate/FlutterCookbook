@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 55;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -16,9 +16,10 @@
 		4BE26A022A2DCAA9007ADD18 /* XmlToFlutterConverter.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BE26A012A2DCAA9007ADD18 /* XmlToFlutterConverter.m */; };
 		4BEB005A2A5E6DBA00D9283E /* xml in Resources */ = {isa = PBXBuildFile; fileRef = 4BEB00592A5E6DBA00D9283E /* xml */; };
 		4BEB00632A669FF400D9283E /* ConvertHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BEB00622A669FF400D9283E /* ConvertHelper.m */; };
-		4BEB00662A66A6B900D9283E /* CustomWidget.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BEB00652A66A6B900D9283E /* CustomWidget.m */; };
-		4BEB006A2A66A81300D9283E /* ElevatedButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BEB00692A66A81300D9283E /* ElevatedButton.m */; };
+		4BEB00662A66A6B900D9283E /* Widget.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BEB00652A66A6B900D9283E /* Widget.m */; };
+		4BEB006A2A66A81300D9283E /* TextButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BEB00692A66A81300D9283E /* TextButton.m */; };
 		4BEB006D2A66AEB700D9283E /* StatelessWidget.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BEB006C2A66AEB700D9283E /* StatelessWidget.m */; };
+		5B90E0292A66D9D4000D8313 /* Text.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B90E0282A66D9D4000D8313 /* Text.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,12 +37,14 @@
 		4BEB00592A5E6DBA00D9283E /* xml */ = {isa = PBXFileReference; lastKnownFileType = text; path = xml; sourceTree = "<group>"; };
 		4BEB00612A669FF400D9283E /* ConvertHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ConvertHelper.h; sourceTree = "<group>"; };
 		4BEB00622A669FF400D9283E /* ConvertHelper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ConvertHelper.m; sourceTree = "<group>"; };
-		4BEB00642A66A6B900D9283E /* CustomWidget.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomWidget.h; sourceTree = "<group>"; };
-		4BEB00652A66A6B900D9283E /* CustomWidget.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomWidget.m; sourceTree = "<group>"; };
-		4BEB00682A66A81300D9283E /* ElevatedButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ElevatedButton.h; sourceTree = "<group>"; };
-		4BEB00692A66A81300D9283E /* ElevatedButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ElevatedButton.m; sourceTree = "<group>"; };
+		4BEB00642A66A6B900D9283E /* Widget.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Widget.h; sourceTree = "<group>"; };
+		4BEB00652A66A6B900D9283E /* Widget.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Widget.m; sourceTree = "<group>"; };
+		4BEB00682A66A81300D9283E /* TextButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TextButton.h; sourceTree = "<group>"; };
+		4BEB00692A66A81300D9283E /* TextButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TextButton.m; sourceTree = "<group>"; };
 		4BEB006B2A66AEB700D9283E /* StatelessWidget.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StatelessWidget.h; sourceTree = "<group>"; };
 		4BEB006C2A66AEB700D9283E /* StatelessWidget.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StatelessWidget.m; sourceTree = "<group>"; };
+		5B90E0272A66D9D4000D8313 /* Text.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Text.h; sourceTree = "<group>"; };
+		5B90E0282A66D9D4000D8313 /* Text.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Text.m; sourceTree = "<group>"; };
 		6C6148FE3483058E8CFC41EC /* Pods-XMLToFlutterConverter.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XMLToFlutterConverter.release.xcconfig"; path = "Target Support Files/Pods-XMLToFlutterConverter/Pods-XMLToFlutterConverter.release.xcconfig"; sourceTree = "<group>"; };
 		9BB5F722C9849163A0C5F81F /* Pods_XMLToFlutterConverter.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_XMLToFlutterConverter.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD977A5751DFD3CC566563A0 /* Pods-XMLToFlutterConverter.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XMLToFlutterConverter.debug.xcconfig"; path = "Target Support Files/Pods-XMLToFlutterConverter/Pods-XMLToFlutterConverter.debug.xcconfig"; sourceTree = "<group>"; };
@@ -86,12 +89,14 @@
 				4BE269F12A2DCA76007ADD18 /* ViewController.m */,
 				4BE26A002A2DCAA9007ADD18 /* XmlToFlutterConverter.h */,
 				4BE26A012A2DCAA9007ADD18 /* XmlToFlutterConverter.m */,
-				4BEB00642A66A6B900D9283E /* CustomWidget.h */,
-				4BEB00652A66A6B900D9283E /* CustomWidget.m */,
+				5B90E0272A66D9D4000D8313 /* Text.h */,
+				5B90E0282A66D9D4000D8313 /* Text.m */,
+				4BEB00642A66A6B900D9283E /* Widget.h */,
+				4BEB00652A66A6B900D9283E /* Widget.m */,
 				4BEB006B2A66AEB700D9283E /* StatelessWidget.h */,
 				4BEB006C2A66AEB700D9283E /* StatelessWidget.m */,
-				4BEB00682A66A81300D9283E /* ElevatedButton.h */,
-				4BEB00692A66A81300D9283E /* ElevatedButton.m */,
+				4BEB00682A66A81300D9283E /* TextButton.h */,
+				4BEB00692A66A81300D9283E /* TextButton.m */,
 				4BEB00612A669FF400D9283E /* ConvertHelper.h */,
 				4BEB00622A669FF400D9283E /* ConvertHelper.m */,
 				4BE269F32A2DCA77007ADD18 /* Assets.xcassets */,
@@ -157,7 +162,7 @@
 				};
 			};
 			buildConfigurationList = 4BE269E52A2DCA76007ADD18 /* Build configuration list for PBXProject "XMLToFlutterConverter" */;
-			compatibilityVersion = "Xcode 14.0";
+			compatibilityVersion = "Xcode 13.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -236,9 +241,10 @@
 			files = (
 				4BE26A022A2DCAA9007ADD18 /* XmlToFlutterConverter.m in Sources */,
 				4BEB006D2A66AEB700D9283E /* StatelessWidget.m in Sources */,
+				5B90E0292A66D9D4000D8313 /* Text.m in Sources */,
 				4BEB00632A669FF400D9283E /* ConvertHelper.m in Sources */,
-				4BEB00662A66A6B900D9283E /* CustomWidget.m in Sources */,
-				4BEB006A2A66A81300D9283E /* ElevatedButton.m in Sources */,
+				4BEB00662A66A6B900D9283E /* Widget.m in Sources */,
+				4BEB006A2A66A81300D9283E /* TextButton.m in Sources */,
 				4BE269F22A2DCA76007ADD18 /* ViewController.m in Sources */,
 				4BE269F92A2DCA77007ADD18 /* main.m in Sources */,
 				4BE269EF2A2DCA76007ADD18 /* AppDelegate.m in Sources */,
@@ -378,7 +384,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = QNMCTRKH9M;
+				DEVELOPMENT_TEAM = 83J8888V77;
 				ENABLE_HARDENED_RUNTIME = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = "    self.window.styleMask = NSStatusWindowLevel ; //显示全频按钮\nXMLToFlutter";
@@ -389,6 +395,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
+				MACOSX_DEPLOYMENT_TARGET = 12.4;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.zpfate.www.XMLToFlutterConverter;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -406,7 +413,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = QNMCTRKH9M;
+				DEVELOPMENT_TEAM = 83J8888V77;
 				ENABLE_HARDENED_RUNTIME = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = "    self.window.styleMask = NSStatusWindowLevel ; //显示全频按钮\nXMLToFlutter";
@@ -417,6 +424,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
+				MACOSX_DEPLOYMENT_TARGET = 12.4;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.zpfate.www.XMLToFlutterConverter;
 				PRODUCT_NAME = "$(TARGET_NAME)";

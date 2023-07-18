@@ -1,15 +1,15 @@
 //
-//  Component.h
+//  Text.h
 //  XMLToFlutterConverter
 //
-//  Created by fate on 2023/7/18.
+//  Created by Twisted Fate on 2023/7/18.
 //
 
 #import "Widget.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface StatelessWidget : Widget
+@interface Text : Widget
 
 @end
 

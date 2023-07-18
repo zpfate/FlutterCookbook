@@ -8,12 +8,12 @@
 #import <Foundation/Foundation.h>
 
 NS_ASSUME_NONNULL_BEGIN
-@class CustomWidget;
+@class Widget;
 @interface ConvertHelper : NSObject
 
 + (NSDictionary *)replacedKeyDictionary;
 
-+ (CustomWidget *)convertClass:(NSString *)widgetName;
++ (Widget *)convertClass:(NSString *)widgetName;
 
 
 + (NSString *)importFile;

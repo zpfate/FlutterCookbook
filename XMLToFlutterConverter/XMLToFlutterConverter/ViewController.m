@@ -40,12 +40,10 @@
     NSLog(@"XML:\n%@", xmlString);
     NSLog(@"Flutter:\n%@", flutterCode);
     
-
     [self.view addSubview:self.xmlTextF];
     [self.view addSubview:self.codeTextF];
     [self.view addSubview:self.convertBtn];
 
-    
     [self.xmlTextF mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.top.mas_equalTo(self.view);
         make.height.mas_equalTo(600);
