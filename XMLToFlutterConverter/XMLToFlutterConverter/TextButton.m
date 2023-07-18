@@ -40,25 +40,27 @@
     NSString *fontSize = attrs[@"fontSize"];
     NSString *borderRadius = attrs[@"borderRadius"];
     NSString *borderColor = attrs[@"borderColor"];
+    NSString *borderWidth = attrs[@"borderWidth"];
+
     NSString *marginTop = attrs[@"marginTop"];
     NSString *marginBottom = attrs[@"marginBottom"];
     NSString *marginLeft = attrs[@"marginLeft"];
     NSString *marginRight = attrs[@"marginRight"];
 
-    return @"TextButton(\
+    return [NSString stringWithFormat:@"TextButton(\
                 onPressed: () {},\
                 child: const Text('$text',),\
                 style: TextButton.styleFrom(\
-                padding: const EdgeInsets.only(top: 15, bottom: 10, left: 10, right: 10),\
-                backgroundColor: Colors.green,\
-                foregroundColor: Colors.red,\
-                side: const BorderSide(color: Colors.black, width: 1),\
-                textStyle: const TextStyle(fontSize: 20, color: Colors.red),\
+                padding: const EdgeInsets.only(top: %@, bottom: %@, left: %@, right: %@),\
+                backgroundColor: %@,\
+                foregroundColor: %@,\
+                side: const BorderSide(color: %@, width: %@),\
+                textStyle: const TextStyle(fontSize: %@),\
                 shape: RoundedRectangleBorder(\
-                    borderRadius: BorderRadius.circular(4),\
+                    borderRadius: BorderRadius.circular(%@),\
                     ),\
                 ),\
-        ),";
+        ),", marginTop, marginBottom, marginLeft, marginRight, [self convertColor:bgColor], [self convertColor:color], [self convertColor:borderColor], borderWidth, fontSize, borderRadius];
 }
 
 @end

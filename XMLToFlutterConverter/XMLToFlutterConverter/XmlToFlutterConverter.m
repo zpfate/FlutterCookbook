@@ -51,27 +51,31 @@
     
     
     
-    if ([elementName isEqualToString:@"Container"]) {
-        NSString *color = attributeDict[@"color"];
-        [_widgetStack addObject:[NSString stringWithFormat:@"Container(\ncolor: Color(%@),\n", [self parseColor:color]]];
-    } else if ([elementName isEqualToString:@"Text"]) {
-        NSString *color = attributeDict[@"color"];
-        NSString *font = attributeDict[@"color"];
-//        [_widgetStack addObject:[NSString stringWithFormat:@"Text(,style:TextStyle(color:Color(%@), font:%@", [self parseColor:color], font]];
-        [_widgetStack addObject:@"Text("];
-    } else if ([elementName isEqualToString:@"Button"]) {
-        NSString *onClick = attributeDict[@"onClick"];
-        [_widgetStack addObject:[NSString stringWithFormat:@"GestureDetector(\nonTap:() {\n%@\n},\n", onClick]];
-    }
+//    if ([elementName isEqualToString:@"Container"]) {
+//        NSString *color = attributeDict[@"color"];
+//        [_widgetStack addObject:[NSString stringWithFormat:@"Container(\ncolor: Color(%@),\n", [self parseColor:color]]];
+//    } else if ([elementName isEqualToString:@"Text"]) {
+//        NSString *color = attributeDict[@"color"];
+//        NSString *font = attributeDict[@"color"];
+////        [_widgetStack addObject:[NSString stringWithFormat:@"Text(,style:TextStyle(color:Color(%@), font:%@", [self parseColor:color], font]];
+//        [_widgetStack addObject:@"Text("];
+//    } else if ([elementName isEqualToString:@"Button"]) {
+//        NSString *onClick = attributeDict[@"onClick"];
+//        [_widgetStack addObject:[NSString stringWithFormat:@"GestureDetector(\nonTap:() {\n%@\n},\n", onClick]];
+//    }
 }
 
 - (void)parser:(NSXMLParser *)parser foundCharacters:(NSString *)string {
     
-    NSString *lastStr = _widgetStack.lastObject;
-    NSMutableString *currentText = [NSMutableString stringWithString:lastStr];
-    [currentText appendFormat:@"'%@'", string];
-//    currentText replace
-    [_widgetStack replaceObjectAtIndex:_widgetStack.count - 1 withObject:currentText];
+    
+    if (![[self class] isBlankString:string]) {
+        NSString *lastStr = _widgetStack.lastObject;
+        NSMutableString *currentText = [NSMutableString stringWithString:lastStr];
+        [currentText stringByReplacingOccurrencesOfString:@"$text" withString:string];
+        [_widgetStack replaceObjectAtIndex:_widgetStack.count - 1 withObject:currentText];
+    }
+    
+
 }
 
 - (void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName {
@@ -103,8 +107,6 @@
     NSLog(@"XML parse failed == %@", parseError);
 }
 
-
-
 #pragma mark - Convert Action
 
 - (NSString *)parseColor:(NSString *)colorString {
@@ -116,6 +118,24 @@
     return nil;
 }
 
+
++ (BOOL)isBlankString:(NSString *)string{
+       if (string == nil) {
+            return YES;
+        }
+        if (string == NULL) {
+            return YES;
+        }
+        if ([string isKindOfClass:[NSNull class]]) {
+            return YES;
+        }
+    
+    NSString *blankString = [string stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+        if ([blankString length] == 0) {
+            return YES;
+        }
+    return NO;
+}
 
 
 #pragma mark -- Getter

@@ -12,6 +12,14 @@
     return @"";
 }
 
+- (NSString *)value:(NSString *)value {
+    if (value.length) {
+        return value;
+    }
+    return @"null";
+}
+
+
 - (NSString *)convertTextStyle:(nullable NSString *)fontSize fontWeight:(nullable NSString *)fontWeight color:(nullable NSString *)color {
     
     return [NSString stringWithFormat:@"  TextStyle(\

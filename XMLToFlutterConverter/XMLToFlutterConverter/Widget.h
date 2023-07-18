@@ -13,6 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (NSString *)createWidget:(NSDictionary *)attrs;
 
+- (NSString *)value:(NSString *)value;
 
 - (NSString *)convertTextStyle:(nullable NSString *)fontSize fontWeight:(nullable NSString *)fontWeight color:(nullable NSString *)color;
 
