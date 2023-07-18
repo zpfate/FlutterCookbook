@@ -39,7 +39,7 @@ dependencies:
   pull_to_refresh: 2.0.0
   cached_network_image: 3.0.0
   webview_flutter: 4.0.1
-  get: 4.3.4
+  get:
   dio:
 
 dev_dependencies:

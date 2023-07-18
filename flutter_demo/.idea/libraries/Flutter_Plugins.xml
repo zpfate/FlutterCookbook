@@ -1,15 +1,15 @@
 <component name="libraryTable">
   <library name="Flutter Plugins" type="FlutterPluginsLibraryType">
     <CLASSES>
-      <root url="file://$USER_HOME$/.pub-cache/hosted/pub.flutter-io.cn/webview_flutter_android-3.4.3" />
-      <root url="file://$USER_HOME$/.pub-cache/hosted/pub.flutter-io.cn/path_provider_foundation-2.2.0" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.flutter-io.cn/webview_flutter-4.0.1" />
-      <root url="file://$USER_HOME$/.pub-cache/hosted/pub.flutter-io.cn/sqflite-2.2.6" />
-      <root url="file://$USER_HOME$/.pub-cache/hosted/pub.flutter-io.cn/webview_flutter_wkwebview-3.2.2" />
-      <root url="file://$USER_HOME$/.pub-cache/hosted/pub.flutter-io.cn/path_provider_android-2.0.24" />
-      <root url="file://$USER_HOME$/.pub-cache/hosted/pub.flutter-io.cn/path_provider_linux-2.1.10" />
-      <root url="file://$USER_HOME$/.pub-cache/hosted/pub.flutter-io.cn/path_provider-2.0.14" />
-      <root url="file://$USER_HOME$/.pub-cache/hosted/pub.flutter-io.cn/path_provider_windows-2.1.5" />
+      <root url="file://$USER_HOME$/.pub-cache/hosted/pub.flutter-io.cn/sqflite-2.2.8+4" />
+      <root url="file://$USER_HOME$/.pub-cache/hosted/pub.flutter-io.cn/webview_flutter_wkwebview-3.7.0" />
+      <root url="file://$USER_HOME$/.pub-cache/hosted/pub.flutter-io.cn/path_provider_foundation-2.2.4" />
+      <root url="file://$USER_HOME$/.pub-cache/hosted/pub.flutter-io.cn/webview_flutter_android-3.9.1" />
+      <root url="file://$USER_HOME$/.pub-cache/hosted/pub.flutter-io.cn/path_provider_android-2.0.27" />
+      <root url="file://$USER_HOME$/.pub-cache/hosted/pub.flutter-io.cn/path_provider_linux-2.1.11" />
+      <root url="file://$USER_HOME$/.pub-cache/hosted/pub.flutter-io.cn/path_provider_windows-2.1.7" />
+      <root url="file://$USER_HOME$/.pub-cache/hosted/pub.flutter-io.cn/path_provider-2.0.15" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />

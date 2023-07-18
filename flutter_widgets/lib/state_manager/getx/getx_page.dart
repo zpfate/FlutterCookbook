@@ -91,11 +91,15 @@ class _GetXPageState extends State<GetXPage> {
                 children: [
                   ElevatedButton(
                     child: const Text("Obx"),
-                    onPressed: () {},
+                    onPressed: () {
+
+                      _controller.increment();
+
+                    },
                   ),
                   Obx(
                     () => Text(
-                      _controller.count.toString(),
+                      (_controller.count.value + _controller.count2.value).toString(),
                       style: const TextStyle(fontSize: 25, color: Colors.white),
                     ),
                   )
@@ -109,7 +113,9 @@ class _GetXPageState extends State<GetXPage> {
                 children: [
                   ElevatedButton(
                     child: const Text("GetX"),
-                    onPressed: () {},
+                    onPressed: () {
+                      _controller.increment2();
+                    },
                   ),
                   Text(
                     controller.count.toString(),

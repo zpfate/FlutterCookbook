@@ -3,9 +3,15 @@ import 'package:get/get.dart';
 class GetXPageController extends GetxController {
   RxInt count = 0.obs;
 
+  RxInt count2 = 0.obs;
+
+
   increment() {
     count++;
-    update();
+  }
+
+  increment2() {
+    count2++;
   }
 
   @override

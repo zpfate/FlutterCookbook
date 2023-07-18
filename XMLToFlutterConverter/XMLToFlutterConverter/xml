@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Component name="ComponentUI">
+  <Button
+    bgColor="#7033FF"
+    color="#FFFFFF"
+    fontSize="16"
+    fontWeight="bold"
+    marginTop="2"
+    marginLeft="16"
+    width="200"
+    height="50"
+    borderRadius="25"
+    borderColor="#00000033"
+    borderWidth="1">Hello,world</Button>
+</Component>

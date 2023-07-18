@@ -24,6 +24,7 @@ import 'package:flutter_widgets/state_manager/state_manager_page.dart';
 import 'package:flutter_widgets/tools/log_util.dart';
 import 'package:flutter_widgets/tools/widget_bean.dart';
 import 'package:flutter_widgets/widgets/route_page.dart';
+import 'package:flutter_widgets/widgets/signature_util.dart';
 import 'package:flutter_widgets/widgets/sliver.dart';
 import 'package:flutter_widgets/widgets/stream_builder_page.dart';
 import 'package:flutter_widgets/widgets/stream_page.dart';
@@ -131,6 +132,8 @@ class _MyHomePageState extends State<MyHomePage> {
       WidgetBean(title: "PopupRoute", page: const PopupRoutePage()),
       WidgetBean(title: "StreamBuilder", page: const StreamBuilderPage()),
       WidgetBean(title: "Key", page: const KeyPage()),
+      WidgetBean(title: "Signature", page: const SignaturePage()),
+
     ];
 
     for (var element in list) {

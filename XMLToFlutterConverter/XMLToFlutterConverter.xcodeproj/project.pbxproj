@@ -1,0 +1,451 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		4472914A83F0642D265C0901 /* Pods_XMLToFlutterConverter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BB5F722C9849163A0C5F81F /* Pods_XMLToFlutterConverter.framework */; };
+		4BE269EF2A2DCA76007ADD18 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BE269EE2A2DCA76007ADD18 /* AppDelegate.m */; };
+		4BE269F22A2DCA76007ADD18 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BE269F12A2DCA76007ADD18 /* ViewController.m */; };
+		4BE269F42A2DCA77007ADD18 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4BE269F32A2DCA77007ADD18 /* Assets.xcassets */; };
+		4BE269F72A2DCA77007ADD18 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4BE269F52A2DCA77007ADD18 /* Main.storyboard */; };
+		4BE269F92A2DCA77007ADD18 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BE269F82A2DCA77007ADD18 /* main.m */; };
+		4BE26A022A2DCAA9007ADD18 /* XmlToFlutterConverter.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BE26A012A2DCAA9007ADD18 /* XmlToFlutterConverter.m */; };
+		4BEB005A2A5E6DBA00D9283E /* xml in Resources */ = {isa = PBXBuildFile; fileRef = 4BEB00592A5E6DBA00D9283E /* xml */; };
+		4BEB00632A669FF400D9283E /* ConvertHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BEB00622A669FF400D9283E /* ConvertHelper.m */; };
+		4BEB00662A66A6B900D9283E /* CustomWidget.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BEB00652A66A6B900D9283E /* CustomWidget.m */; };
+		4BEB006A2A66A81300D9283E /* ElevatedButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BEB00692A66A81300D9283E /* ElevatedButton.m */; };
+		4BEB006D2A66AEB700D9283E /* StatelessWidget.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BEB006C2A66AEB700D9283E /* StatelessWidget.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		4BE269EA2A2DCA76007ADD18 /* XMLToFlutterConverter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = XMLToFlutterConverter.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4BE269ED2A2DCA76007ADD18 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		4BE269EE2A2DCA76007ADD18 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		4BE269F02A2DCA76007ADD18 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		4BE269F12A2DCA76007ADD18 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		4BE269F32A2DCA77007ADD18 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		4BE269F62A2DCA77007ADD18 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		4BE269F82A2DCA77007ADD18 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		4BE269FA2A2DCA77007ADD18 /* XMLToFlutterConverter.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = XMLToFlutterConverter.entitlements; sourceTree = "<group>"; };
+		4BE26A002A2DCAA9007ADD18 /* XmlToFlutterConverter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XmlToFlutterConverter.h; sourceTree = "<group>"; };
+		4BE26A012A2DCAA9007ADD18 /* XmlToFlutterConverter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XmlToFlutterConverter.m; sourceTree = "<group>"; };
+		4BEB00592A5E6DBA00D9283E /* xml */ = {isa = PBXFileReference; lastKnownFileType = text; path = xml; sourceTree = "<group>"; };
+		4BEB00612A669FF400D9283E /* ConvertHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ConvertHelper.h; sourceTree = "<group>"; };
+		4BEB00622A669FF400D9283E /* ConvertHelper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ConvertHelper.m; sourceTree = "<group>"; };
+		4BEB00642A66A6B900D9283E /* CustomWidget.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomWidget.h; sourceTree = "<group>"; };
+		4BEB00652A66A6B900D9283E /* CustomWidget.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomWidget.m; sourceTree = "<group>"; };
+		4BEB00682A66A81300D9283E /* ElevatedButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ElevatedButton.h; sourceTree = "<group>"; };
+		4BEB00692A66A81300D9283E /* ElevatedButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ElevatedButton.m; sourceTree = "<group>"; };
+		4BEB006B2A66AEB700D9283E /* StatelessWidget.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StatelessWidget.h; sourceTree = "<group>"; };
+		4BEB006C2A66AEB700D9283E /* StatelessWidget.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StatelessWidget.m; sourceTree = "<group>"; };
+		6C6148FE3483058E8CFC41EC /* Pods-XMLToFlutterConverter.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XMLToFlutterConverter.release.xcconfig"; path = "Target Support Files/Pods-XMLToFlutterConverter/Pods-XMLToFlutterConverter.release.xcconfig"; sourceTree = "<group>"; };
+		9BB5F722C9849163A0C5F81F /* Pods_XMLToFlutterConverter.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_XMLToFlutterConverter.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CD977A5751DFD3CC566563A0 /* Pods-XMLToFlutterConverter.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XMLToFlutterConverter.debug.xcconfig"; path = "Target Support Files/Pods-XMLToFlutterConverter/Pods-XMLToFlutterConverter.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		4BE269E72A2DCA76007ADD18 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4472914A83F0642D265C0901 /* Pods_XMLToFlutterConverter.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		4BE269E12A2DCA76007ADD18 = {
+			isa = PBXGroup;
+			children = (
+				4BE269EC2A2DCA76007ADD18 /* XMLToFlutterConverter */,
+				4BE269EB2A2DCA76007ADD18 /* Products */,
+				5F7FE8C4782ED4EB466920E4 /* Pods */,
+				F37E55DCA1502DA8C038448D /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		4BE269EB2A2DCA76007ADD18 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4BE269EA2A2DCA76007ADD18 /* XMLToFlutterConverter.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4BE269EC2A2DCA76007ADD18 /* XMLToFlutterConverter */ = {
+			isa = PBXGroup;
+			children = (
+				4BE269ED2A2DCA76007ADD18 /* AppDelegate.h */,
+				4BE269EE2A2DCA76007ADD18 /* AppDelegate.m */,
+				4BE269F02A2DCA76007ADD18 /* ViewController.h */,
+				4BE269F12A2DCA76007ADD18 /* ViewController.m */,
+				4BE26A002A2DCAA9007ADD18 /* XmlToFlutterConverter.h */,
+				4BE26A012A2DCAA9007ADD18 /* XmlToFlutterConverter.m */,
+				4BEB00642A66A6B900D9283E /* CustomWidget.h */,
+				4BEB00652A66A6B900D9283E /* CustomWidget.m */,
+				4BEB006B2A66AEB700D9283E /* StatelessWidget.h */,
+				4BEB006C2A66AEB700D9283E /* StatelessWidget.m */,
+				4BEB00682A66A81300D9283E /* ElevatedButton.h */,
+				4BEB00692A66A81300D9283E /* ElevatedButton.m */,
+				4BEB00612A669FF400D9283E /* ConvertHelper.h */,
+				4BEB00622A669FF400D9283E /* ConvertHelper.m */,
+				4BE269F32A2DCA77007ADD18 /* Assets.xcassets */,
+				4BE269F52A2DCA77007ADD18 /* Main.storyboard */,
+				4BE269F82A2DCA77007ADD18 /* main.m */,
+				4BE269FA2A2DCA77007ADD18 /* XMLToFlutterConverter.entitlements */,
+				4BEB00592A5E6DBA00D9283E /* xml */,
+			);
+			path = XMLToFlutterConverter;
+			sourceTree = "<group>";
+		};
+		5F7FE8C4782ED4EB466920E4 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				CD977A5751DFD3CC566563A0 /* Pods-XMLToFlutterConverter.debug.xcconfig */,
+				6C6148FE3483058E8CFC41EC /* Pods-XMLToFlutterConverter.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		F37E55DCA1502DA8C038448D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9BB5F722C9849163A0C5F81F /* Pods_XMLToFlutterConverter.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		4BE269E92A2DCA76007ADD18 /* XMLToFlutterConverter */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4BE269FD2A2DCA77007ADD18 /* Build configuration list for PBXNativeTarget "XMLToFlutterConverter" */;
+			buildPhases = (
+				6A8AE89F498986551A03170C /* [CP] Check Pods Manifest.lock */,
+				4BE269E62A2DCA76007ADD18 /* Sources */,
+				4BE269E72A2DCA76007ADD18 /* Frameworks */,
+				4BE269E82A2DCA76007ADD18 /* Resources */,
+				891E22EA8502F63784615DB5 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = XMLToFlutterConverter;
+			productName = XMLToFlutterConverter;
+			productReference = 4BE269EA2A2DCA76007ADD18 /* XMLToFlutterConverter.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		4BE269E22A2DCA76007ADD18 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastUpgradeCheck = 1420;
+				TargetAttributes = {
+					4BE269E92A2DCA76007ADD18 = {
+						CreatedOnToolsVersion = 14.2;
+					};
+				};
+			};
+			buildConfigurationList = 4BE269E52A2DCA76007ADD18 /* Build configuration list for PBXProject "XMLToFlutterConverter" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 4BE269E12A2DCA76007ADD18;
+			productRefGroup = 4BE269EB2A2DCA76007ADD18 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				4BE269E92A2DCA76007ADD18 /* XMLToFlutterConverter */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		4BE269E82A2DCA76007ADD18 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4BEB005A2A5E6DBA00D9283E /* xml in Resources */,
+				4BE269F42A2DCA77007ADD18 /* Assets.xcassets in Resources */,
+				4BE269F72A2DCA77007ADD18 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		6A8AE89F498986551A03170C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-XMLToFlutterConverter-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		891E22EA8502F63784615DB5 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-XMLToFlutterConverter/Pods-XMLToFlutterConverter-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-XMLToFlutterConverter/Pods-XMLToFlutterConverter-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-XMLToFlutterConverter/Pods-XMLToFlutterConverter-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		4BE269E62A2DCA76007ADD18 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4BE26A022A2DCAA9007ADD18 /* XmlToFlutterConverter.m in Sources */,
+				4BEB006D2A66AEB700D9283E /* StatelessWidget.m in Sources */,
+				4BEB00632A669FF400D9283E /* ConvertHelper.m in Sources */,
+				4BEB00662A66A6B900D9283E /* CustomWidget.m in Sources */,
+				4BEB006A2A66A81300D9283E /* ElevatedButton.m in Sources */,
+				4BE269F22A2DCA76007ADD18 /* ViewController.m in Sources */,
+				4BE269F92A2DCA77007ADD18 /* main.m in Sources */,
+				4BE269EF2A2DCA76007ADD18 /* AppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		4BE269F52A2DCA77007ADD18 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4BE269F62A2DCA77007ADD18 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		4BE269FB2A2DCA77007ADD18 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 13.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		4BE269FC2A2DCA77007ADD18 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 13.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		4BE269FE2A2DCA77007ADD18 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = CD977A5751DFD3CC566563A0 /* Pods-XMLToFlutterConverter.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = XMLToFlutterConverter/XMLToFlutterConverter.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = QNMCTRKH9M;
+				ENABLE_HARDENED_RUNTIME = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "    self.window.styleMask = NSStatusWindowLevel ; //显示全频按钮\nXMLToFlutter";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_NSMainStoryboardFile = Main;
+				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.zpfate.www.XMLToFlutterConverter;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+			};
+			name = Debug;
+		};
+		4BE269FF2A2DCA77007ADD18 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6C6148FE3483058E8CFC41EC /* Pods-XMLToFlutterConverter.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = XMLToFlutterConverter/XMLToFlutterConverter.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = QNMCTRKH9M;
+				ENABLE_HARDENED_RUNTIME = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "    self.window.styleMask = NSStatusWindowLevel ; //显示全频按钮\nXMLToFlutter";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_NSMainStoryboardFile = Main;
+				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.zpfate.www.XMLToFlutterConverter;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4BE269E52A2DCA76007ADD18 /* Build configuration list for PBXProject "XMLToFlutterConverter" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4BE269FB2A2DCA77007ADD18 /* Debug */,
+				4BE269FC2A2DCA77007ADD18 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4BE269FD2A2DCA77007ADD18 /* Build configuration list for PBXNativeTarget "XMLToFlutterConverter" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4BE269FE2A2DCA77007ADD18 /* Debug */,
+				4BE269FF2A2DCA77007ADD18 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 4BE269E22A2DCA76007ADD18 /* Project object */;
+}

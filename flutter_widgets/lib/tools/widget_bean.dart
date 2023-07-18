@@ -14,7 +14,7 @@ class ClickWidget extends StatelessWidget {
         onPressed: () {
           if (widgetBean.page != null) {
             /// 路由跳转
-            Get.to(()=> widgetBean.page!);
+            Get.to(()=> widgetBean.page!, preventDuplicates: false);
           } else {
             if (widgetBean.onPressed != null) {
               widgetBean.onPressed!();
@@ -57,9 +57,9 @@ class ClickSection extends StatelessWidget {
   }
 }
 
-class WidgetBean {
+class WidgetBean<T extends Widget> {
   final String title;
-  final Widget? page;
+  final T? page;
   final Function()? onPressed;
   WidgetBean({required this.title, this.page, this.onPressed});
 }

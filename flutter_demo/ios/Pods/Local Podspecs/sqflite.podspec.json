@@ -1,6 +1,6 @@
 {
   "name": "sqflite",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "summary": "SQLite plugin.",
   "description": "Accss SQLite database.",
   "homepage": "https://github.com/tekartik/sqflite",
@@ -24,7 +24,7 @@
     ]
   },
   "platforms": {
-    "ios": "9.0"
+    "ios": "11.0"
   },
   "pod_target_xcconfig": {
     "DEFINES_MODULE": "YES",

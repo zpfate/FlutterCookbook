@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_demo/getx/getx_demo.dart';
 import 'package:flutter_demo/getx/login_page.dart';
 import 'package:flutter_demo/list_view.dart';
+import 'package:flutter_demo/textfield_page.dart';
 import 'package:flutter_demo/widget/key_page.dart';
 
 void main() {
@@ -102,6 +103,10 @@ class _MyHomePageState extends State<MyHomePage> {
             ElevatedButton(onPressed: () {
               Navigator.of(context).push(MaterialPageRoute(builder: (context)=> const KeyPage()));
             }, child: const Text("Flutter Demo")),
+
+            ElevatedButton(onPressed: () {
+              Navigator.of(context).push(MaterialPageRoute(builder: (context)=> const TextFieldPage()));
+            }, child: const Text("TEXT Demo")),
             // Image.asset("name"),
           ],
         ),
