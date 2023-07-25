@@ -19,14 +19,17 @@ static NSDictionary *definitionDictionary = nil;
     };
 }
 
-+ (Widget *)convertClass:(NSString *)widgetName {
++ (Class)convertClass:(NSString *)widgetName {
     if (definitionDictionary == nil) {
         definitionDictionary = @{
             @"Button": [TextButton class],
             @"StatelessWidget" : [StatelessWidget class],
         };
     }
-    return definitionDictionary[widgetName];
+    /// cls
+    Class cls = definitionDictionary[widgetName];
+    
+    return cls;
 }
 
 + (NSString *)importFileText {

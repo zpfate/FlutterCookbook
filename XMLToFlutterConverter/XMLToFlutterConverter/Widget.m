@@ -9,6 +9,7 @@
 @implementation Widget
 
 - (NSString *)createWidget:(NSDictionary *)attrs {
+    
     return @"";
 }
 
@@ -22,17 +23,22 @@
 
 - (NSString *)convertTextStyle:(nullable NSString *)fontSize fontWeight:(nullable NSString *)fontWeight color:(nullable NSString *)color {
     
-    return [NSString stringWithFormat:@"  TextStyle(\
-                                color: %@,\
-                                fontSize: %@,\
-                                fontWeight: %@,\
+    return [NSString stringWithFormat:@"  TextStyle(\n\
+                                color: %@,\n\
+                                fontSize: %@,\n\
+                                fontWeight: %@,\n\
                               ),", [self convertColor:color], fontSize ?:@"null", [self convertFontWeight:fontWeight]];
 }
 
 - (NSString *)convertColor:(nullable NSString *)colorString {
     if (colorString && colorString.length > 0) {
+        
         NSString *hexString = [colorString stringByReplacingOccurrencesOfString:@"#" withString:@""];
-        return [NSString stringWithFormat:@"0xFF%@", hexString];
+        if (hexString.length == 6) {
+            return [NSString stringWithFormat:@"Color(0xFF%@)", hexString];
+        }
+        
+        return [NSString stringWithFormat:@"Color(0x%@)", hexString];
     }
     return @"null";
 }

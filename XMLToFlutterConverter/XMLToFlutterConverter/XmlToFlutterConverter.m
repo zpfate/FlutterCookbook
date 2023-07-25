@@ -43,11 +43,9 @@
     if ([replacedKeyDictionary.allKeys containsObject:elementName]) {
         clsName = replacedKeyDictionary[elementName];
     }
-    Widget *customWidget = [[[ConvertHelper convertClass:clsName] class] new];
-    NSString *resultStr = [customWidget createWidget:attributeDict];
-    
-    
-    [self.widgetStack addObject:resultStr];
+    Widget *customWidget = [[ConvertHelper convertClass:clsName] new];
+    NSString *widgetStr = [customWidget createWidget:attributeDict];
+    [self.widgetStack addObject:widgetStr];
     
     
     
@@ -67,40 +65,45 @@
 
 - (void)parser:(NSXMLParser *)parser foundCharacters:(NSString *)string {
     
-    
     if (![[self class] isBlankString:string]) {
         NSString *lastStr = _widgetStack.lastObject;
-        NSMutableString *currentText = [NSMutableString stringWithString:lastStr];
-        [currentText stringByReplacingOccurrencesOfString:@"$text" withString:string];
-        [_widgetStack replaceObjectAtIndex:_widgetStack.count - 1 withObject:currentText];
+        lastStr = [lastStr stringByReplacingOccurrencesOfString:@"$text" withString:string];
+        [_widgetStack replaceObjectAtIndex:_widgetStack.count - 1 withObject:lastStr];
     }
-    
-
 }
 
 - (void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName {
     
     /// 取出最下层元素
-    NSMutableString *widgetCode = [[NSMutableString alloc] initWithString:[_widgetStack lastObject]];
-    /// 取出后删除
-    [_widgetStack removeLastObject];
-    if ([elementName isEqualToString:@"Text"]) {
-        [_currentText appendFormat:@"%@)", widgetCode];
-    } else if ([elementName isEqualToString:@"Container"]) {
-        NSMutableString *parentWidgetCode = [NSMutableString stringWithString:widgetCode];
-        [parentWidgetCode appendFormat:@"child: %@,\n", _currentText];
-        [parentWidgetCode appendString:@")"];
-        _currentText = parentWidgetCode;
-    } else if ([elementName isEqualToString:@"Button"]) {
-        NSMutableString *parentWidgetCode = [NSMutableString stringWithString:widgetCode];
-        [parentWidgetCode appendFormat:@"child: %@,\n", _currentText];
-        [parentWidgetCode appendString:@")"];
-        _currentText = parentWidgetCode;
-    }
+//    NSMutableString *widgetCode = [[NSMutableString alloc] initWithString:[_widgetStack lastObject]];
+//    /// 取出后删除
+//    [_widgetStack removeLastObject];
+//    if ([elementName isEqualToString:@"Text"]) {
+//        [_currentText appendFormat:@"%@)", widgetCode];
+//    } else if ([elementName isEqualToString:@"Container"]) {
+//        NSMutableString *parentWidgetCode = [NSMutableString stringWithString:widgetCode];
+//        [parentWidgetCode appendFormat:@"child: %@,\n", _currentText];
+//        [parentWidgetCode appendString:@")"];
+//        _currentText = parentWidgetCode;
+//    } else if ([elementName isEqualToString:@"Button"]) {
+//        NSMutableString *parentWidgetCode = [NSMutableString stringWithString:widgetCode];
+//        [parentWidgetCode appendFormat:@"child: %@,\n", _currentText];
+//        [parentWidgetCode appendString:@")"];
+//        _currentText = parentWidgetCode;
+//    }
 }
 
 - (void)parserDidEndDocument:(NSXMLParser *)parser {
     NSLog(@"XML parse ending =============================== ");
+    
+    NSInteger index = self.widgetStack.count - 1;
+    if (index - 1 >= 0) {
+        NSString *childString = self.widgetStack[index];
+        NSString *mutableString = [NSMutableString stringWithString:self.widgetStack[index - 1]];
+        mutableString = [mutableString stringByReplacingOccurrencesOfString:@"$child" withString:childString];
+        [_widgetStack replaceObjectAtIndex:index - 1 withObject:mutableString];
+    }
+    self.resultText = _widgetStack.firstObject;
 }
 
 - (void)parser:(NSXMLParser *)parser parseErrorOccurred:(NSError *)parseError {

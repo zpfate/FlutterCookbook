@@ -384,7 +384,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 83J8888V77;
+				DEVELOPMENT_TEAM = QNMCTRKH9M;
 				ENABLE_HARDENED_RUNTIME = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = "    self.window.styleMask = NSStatusWindowLevel ; //显示全频按钮\nXMLToFlutter";
@@ -413,7 +413,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 83J8888V77;
+				DEVELOPMENT_TEAM = QNMCTRKH9M;
 				ENABLE_HARDENED_RUNTIME = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = "    self.window.styleMask = NSStatusWindowLevel ; //显示全频按钮\nXMLToFlutter";

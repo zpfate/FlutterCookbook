@@ -39,6 +39,7 @@
     NSString *flutterCode = [XmlToFlutterConverter convertToFlutterCode:xmlString];
     NSLog(@"XML:\n%@", xmlString);
     NSLog(@"Flutter:\n%@", flutterCode);
+    self.codeTextF.stringValue = flutterCode;
     
     [self.view addSubview:self.xmlTextF];
     [self.view addSubview:self.codeTextF];
@@ -97,7 +98,7 @@
         _codeTextF = [[NSTextField alloc] init];
         _codeTextF.editable = YES;
         _codeTextF.textColor = NSColor.whiteColor;
-        _codeTextF.editable = NO;
+//        _codeTextF.editable = NO;
     }
     return _codeTextF;
 }

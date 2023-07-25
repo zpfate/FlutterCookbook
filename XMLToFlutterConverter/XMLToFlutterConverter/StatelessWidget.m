@@ -12,12 +12,12 @@
 - (NSString *)createWidget:(NSDictionary *)attrs {
     NSString *name = attrs[@"name"];
     NSString *widgetStr = @"\
-    class name extends StatelessWidget {\
-        const ({super.key});\
-        @override\
-        Widget build(BuildContext context) {\
-            return child;\
-        }\
+    class name extends StatelessWidget {\n\
+        const ({super.key});\n\
+        @override\n\
+        Widget build(BuildContext context) {\n\
+            return $child;\n\
+        }\n\
     }";
     return [widgetStr stringByReplacingOccurrencesOfString:@"name" withString:name];
 }

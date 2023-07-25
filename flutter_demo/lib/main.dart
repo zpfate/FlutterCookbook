@@ -6,6 +6,10 @@ import 'package:flutter_demo/textfield_page.dart';
 import 'package:flutter_demo/widget/key_page.dart';
 
 void main() {
+
+  num x = 0.105;
+  print("${x.toStringAsFixed(2)}");
+
   runApp(const MyApp());
 }
 

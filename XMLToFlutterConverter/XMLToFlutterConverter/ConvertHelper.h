@@ -13,7 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (NSDictionary *)replacedKeyDictionary;
 
-+ (Widget *)convertClass:(NSString *)widgetName;
++ (Class)convertClass:(NSString *)widgetName;
 
 
 + (NSString *)importFile;

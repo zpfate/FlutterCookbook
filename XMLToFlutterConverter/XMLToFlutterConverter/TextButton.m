@@ -47,20 +47,20 @@
     NSString *marginLeft = attrs[@"marginLeft"];
     NSString *marginRight = attrs[@"marginRight"];
 
-    return [NSString stringWithFormat:@"TextButton(\
-                onPressed: () {},\
-                child: const Text('$text',),\
-                style: TextButton.styleFrom(\
-                padding: const EdgeInsets.only(top: %@, bottom: %@, left: %@, right: %@),\
-                backgroundColor: %@,\
-                foregroundColor: %@,\
-                side: const BorderSide(color: %@, width: %@),\
-                textStyle: const TextStyle(fontSize: %@),\
-                shape: RoundedRectangleBorder(\
-                    borderRadius: BorderRadius.circular(%@),\
-                    ),\
-                ),\
-        ),", marginTop, marginBottom, marginLeft, marginRight, [self convertColor:bgColor], [self convertColor:color], [self convertColor:borderColor], borderWidth, fontSize, borderRadius];
+    return [NSString stringWithFormat:@"TextButton(\n\
+                onPressed: () {},\n\
+                child: const Text('$text',),\n\
+                style: TextButton.styleFrom(\n\
+                padding: const EdgeInsets.only(top: %@, bottom: %@, left: %@, right: %@),\n\
+                backgroundColor: %@,\n\
+                foregroundColor: %@,\n\
+                side: const BorderSide(color: %@, width: %@),\n\
+                textStyle: const TextStyle(fontSize: %@),\n\
+                shape: RoundedRectangleBorder(\n\
+                    borderRadius: BorderRadius.circular(%@),\n\
+                    ),\n\
+                ),\n\
+        )", marginTop?:@"0", marginBottom?:@"0", marginLeft ?:@"0", marginRight?:@"0", [self convertColor:bgColor], [self convertColor:color], [self convertColor:borderColor], borderWidth, fontSize, borderRadius];
 }
 
 @end

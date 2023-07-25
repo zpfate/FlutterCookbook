@@ -11,6 +11,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface Widget : NSObject
 
+@property (nonatomic, strong) NSString *widgetStr;
+
 - (NSString *)createWidget:(NSDictionary *)attrs;
 
 - (NSString *)value:(NSString *)value;
