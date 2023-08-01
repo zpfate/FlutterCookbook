@@ -3,20 +3,30 @@
 #import "Widget.h"
 @interface XmlToFlutterConverter ()
 
+
+@property(nonatomic, strong) NSMutableArray *fieldList;
 @property(nonatomic, strong) NSMutableArray *widgetStack;
+@property(nonatomic, strong) NSMutableArray *methodList;
 
-@property(nonatomic, strong) NSMutableString *resultText;
-
-@property(nonatomic, strong) NSMutableString *currentText;
+@property(nonatomic, strong) NSMutableString *result;
 
 @end
+
+static NSString *const kComponentElementName = @"Component";
+static NSString *const kFieldListElementName = @"FieldList";
+static NSString *const kMethodListElementName = @"MethodList";
+static NSString *const kUIElementName = @"UI";
+
+static NSString *const kFiledElementName = @"Field";
+static NSString *const kMethodElementName = @"Method";
+//static NSString *const kMethodListElementName = @"MethodList";
 
 @implementation XmlToFlutterConverter
 
 + (NSString *)convertToFlutterCode:(NSString *)xmlString {
     XmlToFlutterConverter *converter = [[XmlToFlutterConverter alloc] init];
     [converter parseXML:xmlString];
-    return converter.resultText;
+    return converter.result;
 }
 
 - (void)parseXML:(NSString *)xmlString {
@@ -31,23 +41,41 @@
 
 - (void)parserDidStartDocument:(NSXMLParser *)parser {
     NSLog(@"XML parse start ===============================");
-    [self.resultText appendString:@"import 'package:flutter/material.dart';\n\n"];
+    [self.result appendString:[ConvertHelper importFile]];
 }
 
 - (void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary<NSString *,NSString *> *)attributeDict {
     
-    NSLog(@"XML parse elementName = %@ \n attributes = %@" , elementName, attributeDict.description);
-    [_currentText setString:@""];
-    NSDictionary *replacedKeyDictionary = [ConvertHelper replacedKeyDictionary];
-    NSString *clsName = elementName;
-    if ([replacedKeyDictionary.allKeys containsObject:elementName]) {
-        clsName = replacedKeyDictionary[elementName];
+    if ([elementName isEqualToString:kComponentElementName]) {
+        /// 初始化类名
+        NSDictionary *replacedDictionary = [ConvertHelper replacedKeyDictionary];
+        NSString *clsName = elementName;
+        if ([replacedDictionary.allKeys containsObject:elementName]) {
+            clsName = replacedDictionary[elementName];
+        }
+        NSString *clsText = [ConvertHelper convertClass:clsName attributes:attributeDict];
+        
+        self.result = [clsText mutableCopy];
+
+    } else if ([elementName isEqualToString:kFieldListElementName]) {
+        /// 初始化属性
+
+    } else if ([elementName isEqualToString:kUIElementName]) {
+
+    } else if ([elementName isEqualToString:kMethodListElementName]) {
+
     }
-    Widget *customWidget = [[ConvertHelper convertClass:clsName] new];
-    NSString *widgetStr = [customWidget createWidget:attributeDict];
-    [self.widgetStack addObject:widgetStr];
     
-    
+    NSLog(@"XML parse elementName = %@ \n attributes = %@" , elementName, attributeDict.description);
+//    [_currentText setString:@""];
+//    NSDictionary *replacedKeyDictionary = [ConvertHelper replacedKeyDictionary];
+//    NSString *clsName = elementName;
+//    if ([replacedKeyDictionary.allKeys containsObject:elementName]) {
+//        clsName = replacedKeyDictionary[elementName];
+//    }
+//    Widget *customWidget = [[ConvertHelper convertClass:clsName] new];
+//    NSString *widgetStr = [customWidget createWidget:attributeDict];
+//    [self.widgetStack addObject:widgetStr];
     
 //    if ([elementName isEqualToString:@"Container"]) {
 //        NSString *color = attributeDict[@"color"];
@@ -96,14 +124,14 @@
 - (void)parserDidEndDocument:(NSXMLParser *)parser {
     NSLog(@"XML parse ending =============================== ");
     
-    NSInteger index = self.widgetStack.count - 1;
-    if (index - 1 >= 0) {
-        NSString *childString = self.widgetStack[index];
-        NSString *mutableString = [NSMutableString stringWithString:self.widgetStack[index - 1]];
-        mutableString = [mutableString stringByReplacingOccurrencesOfString:@"$child" withString:childString];
-        [_widgetStack replaceObjectAtIndex:index - 1 withObject:mutableString];
-    }
-    self.resultText = _widgetStack.firstObject;
+//    NSInteger index = self.widgetStack.count - 1;
+//    if (index - 1 >= 0) {
+//        NSString *childString = self.widgetStack[index];
+//        NSString *mutableString = [NSMutableString stringWithString:self.widgetStack[index - 1]];
+//        mutableString = [mutableString stringByReplacingOccurrencesOfString:@"$child" withString:childString];
+//        [_widgetStack replaceObjectAtIndex:index - 1 withObject:mutableString];
+//    }
+//    self.resultText = _widgetStack.firstObject;
 }
 
 - (void)parser:(NSXMLParser *)parser parseErrorOccurred:(NSError *)parseError {
@@ -150,17 +178,18 @@
     return _widgetStack;
 }
 
-- (NSMutableString *)resultText {
-    if (!_resultText) {
-        _resultText = [NSMutableString string];
+- (NSMutableString *)result {
+    if (!_result) {
+        _result = [NSMutableString string];
     }
-    return _resultText;
+    return _result;
 }
 
-- (NSMutableString *)currentText {
-    if (!_currentText) {
-        _currentText = [NSMutableString string];
+- (NSMutableArray *)fieldList {
+    if (!_fieldList) {
+        _fieldList = [NSMutableArray array];
     }
-    return _currentText;
+    return _fieldList;
 }
+
 @end

@@ -9,9 +9,16 @@
 #import "Widget.h"
 #import "StatelessWidget.h"
 #import "TextButton.h"
+
 @implementation ConvertHelper
 
 static NSDictionary *definitionDictionary = nil;
+
+static NSDictionary *typeDictionary = nil;
+
++ (NSString *)importFile {
+    return @"import 'package:flutter/material.dart';\n\n;";
+}
 
 + (NSDictionary *)replacedKeyDictionary {
     return @{
@@ -19,7 +26,20 @@ static NSDictionary *definitionDictionary = nil;
     };
 }
 
-+ (Class)convertClass:(NSString *)widgetName {
++ (NSString *)convertType:(NSString *)string {
+    if (typeDictionary == nil) {
+        typeDictionary = @{
+            @"string" : @"String",
+            @"int" : @"int",
+            @"double" : @"double",
+            @"float" : @"float",
+            @"num" : @"num"
+        };
+    }
+    return typeDictionary[string];
+}
+
++ (NSString *)convertClass:(NSString *)clsName attributes:(NSDictionary *)attributes {
     if (definitionDictionary == nil) {
         definitionDictionary = @{
             @"Button": [TextButton class],
@@ -27,13 +47,10 @@ static NSDictionary *definitionDictionary = nil;
         };
     }
     /// cls
-    Class cls = definitionDictionary[widgetName];
-    
-    return cls;
-}
-
-+ (NSString *)importFileText {
-    return @"import 'package:flutter/material.dart';\n\n;";
+    Class cls = definitionDictionary[clsName];
+    Widget *widget = [cls new];
+    NSString *code = [widget createWidget:attributes];
+    return code;
 }
 
 + (NSString *)convertButton:(NSDictionary *)attrs {

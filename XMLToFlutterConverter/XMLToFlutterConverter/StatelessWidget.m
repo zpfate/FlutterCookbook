@@ -13,11 +13,13 @@
     NSString *name = attrs[@"name"];
     NSString *widgetStr = @"\
     class name extends StatelessWidget {\n\
+        $filedList\n\
         const ({super.key});\n\
         @override\n\
         Widget build(BuildContext context) {\n\
             return $child;\n\
         }\n\
+        $methodList\n\
     }";
     return [widgetStr stringByReplacingOccurrencesOfString:@"name" withString:name];
 }

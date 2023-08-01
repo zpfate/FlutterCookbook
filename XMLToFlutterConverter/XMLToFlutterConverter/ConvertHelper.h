@@ -11,13 +11,13 @@ NS_ASSUME_NONNULL_BEGIN
 @class Widget;
 @interface ConvertHelper : NSObject
 
-+ (NSDictionary *)replacedKeyDictionary;
-
-+ (Class)convertClass:(NSString *)widgetName;
-
-
 + (NSString *)importFile;
 
++ (NSDictionary *)replacedKeyDictionary;
+
++ (NSString *)convertType:(NSString *)string;
+
++ (NSString *)convertClass:(NSString *)clsName attributes:(NSDictionary *)attributes;
 
 @end
 

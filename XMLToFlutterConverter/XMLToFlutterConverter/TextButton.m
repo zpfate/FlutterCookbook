@@ -48,7 +48,8 @@
     NSString *marginRight = attrs[@"marginRight"];
 
     return [NSString stringWithFormat:@"TextButton(\n\
-                onPressed: () {},\n\
+                onPressed: () {\n\
+                },\n\
                 child: const Text('$text',),\n\
                 style: TextButton.styleFrom(\n\
                 padding: const EdgeInsets.only(top: %@, bottom: %@, left: %@, right: %@),\n\

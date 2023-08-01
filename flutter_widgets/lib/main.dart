@@ -2,6 +2,7 @@ import 'dart:async';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_widgets/key/key_page.dart';
+import 'package:flutter_widgets/tabs/tabs_page.dart';
 import 'package:flutter_widgets/widgets/InheritedWidget/inherited_page.dart';
 import 'package:flutter_widgets/widgets/animated_builder_page.dart';
 import 'package:flutter_widgets/dart/change_notifier_demo.dart';
@@ -47,8 +48,6 @@ void main() {
 
   runZonedGuarded(() {
     runApp(const MyApp());
-
-
 
     // Person full = Person().f
   }, (error, stackTrace) async {
@@ -133,6 +132,7 @@ class _MyHomePageState extends State<MyHomePage> {
       WidgetBean(title: "StreamBuilder", page: const StreamBuilderPage()),
       WidgetBean(title: "Key", page: const KeyPage()),
       WidgetBean(title: "Signature", page: const SignaturePage()),
+      WidgetBean(title: "Tabs", page: const TabsPage()),
 
     ];
 
