@@ -15,10 +15,11 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (NSDictionary *)replacedKeyDictionary;
 
-+ (NSString *)convertType:(NSString *)string;
++ (NSString *)convertType:(NSDictionary *)attributes;
 
 + (NSString *)convertClass:(NSString *)clsName attributes:(NSDictionary *)attributes;
 
++ (NSString *)convertFunction:(NSDictionary *)attributes;
 @end
 
 NS_ASSUME_NONNULL_END

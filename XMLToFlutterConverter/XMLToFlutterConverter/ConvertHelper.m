@@ -26,7 +26,7 @@ static NSDictionary *typeDictionary = nil;
     };
 }
 
-+ (NSString *)convertType:(NSString *)string {
++ (NSString *)convertType:(NSDictionary *)attributes {
     if (typeDictionary == nil) {
         typeDictionary = @{
             @"string" : @"String",
@@ -36,7 +36,15 @@ static NSDictionary *typeDictionary = nil;
             @"num" : @"num"
         };
     }
-    return typeDictionary[string];
+    
+    NSString *typeKey = attributes[@"type"];
+    NSString *type = typeDictionary[typeKey];
+    NSString *name = attributes[@"name"];
+    NSString *value = attributes[@"value"];
+    if (value.length == 0) {
+        value = @"\'\'";
+    }
+    return [NSString stringWithFormat:@"%@ %@ = %@;", type, name, value];
 }
 
 + (NSString *)convertClass:(NSString *)clsName attributes:(NSDictionary *)attributes {
@@ -51,6 +59,14 @@ static NSDictionary *typeDictionary = nil;
     Widget *widget = [cls new];
     NSString *code = [widget createWidget:attributes];
     return code;
+}
+
++ (NSString *)convertFunction:(NSDictionary *)attributes {
+    NSString *functionName = attributes[@"name"];
+    return [NSString stringWithFormat:@"\
+    void %@() {\n\
+        $functionBody\n\
+    }\n", functionName];
 }
 
 + (NSString *)convertButton:(NSDictionary *)attrs {

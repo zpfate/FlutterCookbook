@@ -1,6 +1,7 @@
 #import "XmlToFlutterConverter.h"
 #import "ConvertHelper.h"
 #import "Widget.h"
+#import "TextButton.h"
 @interface XmlToFlutterConverter ()
 
 
@@ -54,16 +55,24 @@ static NSString *const kMethodElementName = @"Method";
             clsName = replacedDictionary[elementName];
         }
         NSString *clsText = [ConvertHelper convertClass:clsName attributes:attributeDict];
-        
         self.result = [clsText mutableCopy];
-
     } else if ([elementName isEqualToString:kFieldListElementName]) {
-        /// 初始化属性
-
+        /// 初始化属性列表
+        self.fieldList = [NSMutableArray array];
     } else if ([elementName isEqualToString:kUIElementName]) {
-
+        self.widgetStack = [NSMutableArray array];
     } else if ([elementName isEqualToString:kMethodListElementName]) {
-
+        self.methodList = [NSMutableArray array];
+    } else if ([elementName isEqualToString:kFiledElementName]) {
+        /// 扫描到变量
+        [self.fieldList addObject:[ConvertHelper convertType:attributeDict]];
+    } else if ([elementName isEqualToString:kMethodElementName]) {
+        /// 扫描到方法
+        [self.methodList addObject:[ConvertHelper convertFunction:attributeDict]];
+    } else if ([elementName isEqualToString:@"Button"]) {
+        Widget *widget = [[TextButton alloc] init];
+        NSString *widgetStr = [widget createWidget:attributeDict];
+        [self.widgetStack addObject:widgetStr];
     }
     
     NSLog(@"XML parse elementName = %@ \n attributes = %@" , elementName, attributeDict.description);
@@ -124,6 +133,17 @@ static NSString *const kMethodElementName = @"Method";
 - (void)parserDidEndDocument:(NSXMLParser *)parser {
     NSLog(@"XML parse ending =============================== ");
     
+    NSString *fieldNameList = [self.fieldList componentsJoinedByString:@"\n"];
+    
+    NSRange fieldRange = [self.result rangeOfString:@"$filedList"];
+    [self.result replaceCharactersInRange:fieldRange withString:fieldNameList];
+    
+    NSRange childRange = [self.result rangeOfString:@"$child"];
+    [self.result replaceCharactersInRange:childRange withString:self.widgetStack.lastObject];
+    
+    NSRange methodRange = [self.result rangeOfString:@"$methodList"];
+    [self.result replaceCharactersInRange:methodRange withString:self.methodList.lastObject];
+    
 //    NSInteger index = self.widgetStack.count - 1;
 //    if (index - 1 >= 0) {
 //        NSString *childString = self.widgetStack[index];
@@ -171,25 +191,11 @@ static NSString *const kMethodElementName = @"Method";
 
 #pragma mark -- Getter
 
-- (NSMutableArray *)widgetStack {
-    if (!_widgetStack) {
-        _widgetStack = [NSMutableArray array];
-    }
-    return _widgetStack;
-}
-
 - (NSMutableString *)result {
     if (!_result) {
         _result = [NSMutableString string];
     }
     return _result;
-}
-
-- (NSMutableArray *)fieldList {
-    if (!_fieldList) {
-        _fieldList = [NSMutableArray array];
-    }
-    return _fieldList;
 }
 
 @end

@@ -32,13 +32,11 @@
     
     NSString *xmlString = [[NSString alloc] initWithContentsOfFile:filePath encoding:NSUTF8StringEncoding error:nil];
     
-    
-    
 //    NSString *xmlString = @"<Button onClick=\"print('点击')\"><Container color=\"#FF0000\"><Text color=\"#FF0000\" font=\"14\">Hello, World!</Text></Container></Button>";
     self.xmlTextF.stringValue = xmlString;
     NSString *flutterCode = [XmlToFlutterConverter convertToFlutterCode:xmlString];
-    NSLog(@"XML:\n%@", xmlString);
-    NSLog(@"Flutter:\n%@", flutterCode);
+//    NSLog(@"XML:\n%@", xmlString);
+    NSLog(@"Flutter result code:\n%@", flutterCode);
     self.codeTextF.stringValue = flutterCode;
     
     [self.view addSubview:self.xmlTextF];

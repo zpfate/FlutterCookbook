@@ -13,8 +13,8 @@
     NSString *name = attrs[@"name"];
     NSString *widgetStr = @"\
     class name extends StatelessWidget {\n\
-        $filedList\n\
         const ({super.key});\n\
+        $filedList\n\
         @override\n\
         Widget build(BuildContext context) {\n\
             return $child;\n\
