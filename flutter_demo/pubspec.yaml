@@ -39,6 +39,8 @@ dependencies:
   pull_to_refresh: 2.0.0
   cached_network_image: 3.0.0
   webview_flutter: 4.0.1
+  flutter_screenutil: ^5.0.0+2
+
   get:
   dio:
 
@@ -63,6 +65,17 @@ flutter:
   # included with your application, so that you can use the icons in
   # the material Icons class.
   uses-material-design: true
+
+  fonts:
+    - family: HM-Bold
+      fonts:
+        - asset: assets/HarmonyOS_Sans_SC_Bold.ttf
+    - family: HM-Md
+      fonts:
+        - asset: assets/harmonyOS_sans_medium.ttf
+    - family: HM-Normal
+      fonts:
+        - asset: assets/harmonyOS_sans_regular.ttf
 
   # To add assets to your application, add an assets section, like this:
 #   assets:

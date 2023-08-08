@@ -1,0 +1,33 @@
+
+
+<Component name="ComponentUI">
+  <FieldList>
+    <Field name="account" type="string" value=''/>
+  </FieldList>
+
+  <MethodList>
+    <Method name="submitBtnClick">
+      <params>
+      </params>
+      <operate>
+        <statement type="var" key="account" value="set account new value"/>
+      </operate>
+    </Method>
+  </MethodList>
+
+  <UI>
+    <Button
+      bgColor="#7033FF"
+      color="#FFFFFF"
+      fontSize="16"
+      fontWeight="bold"
+      marginTop="2"
+      marginLeft="16"
+      width="200"
+      height="50"
+      borderRadius="25"
+      borderColor="#00000033"
+      borderWidth="1"
+      onTap="submitBtnClick">Submit</Button>
+  </UI>
+</Component>

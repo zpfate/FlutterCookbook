@@ -1,4 +1,4 @@
-import 'package:cached_network_image/cached_network_image.dart';
+// import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 
 class ListViewPage extends StatefulWidget {
@@ -32,11 +32,11 @@ class _ListViewPageState extends State<ListViewPage> {
                 debugPrint("tap index == $index");
               },
             ),
-            trailing: CachedNetworkImage(
-              imageUrl: 'https://avatars.githubusercontent.com/u/38549573?s=200&v=4',
-              height: 20,
-              width: 20,
-            ),
+            // trailing: CachedNetworkImage(
+            //   imageUrl: 'https://avatars.githubusercontent.com/u/38549573?s=200&v=4',
+            //   height: 20,
+            //   width: 20,
+            // ),
           );
         },
         itemCount: 20,
