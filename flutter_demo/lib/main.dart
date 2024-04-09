@@ -11,8 +11,6 @@ import 'fonts_page.dart';
 
 void main() {
 
-  num x = 0.105;
-  print("${x.toStringAsFixed(2)}");
 
  
 
@@ -57,7 +55,7 @@ class MyApp extends StatelessWidget {
             // is not restarted.
             primarySwatch: Colors.blue,
           ),
-          home: const MyHomePage(title: 'Flutter Demo Home Page'),
+          home:  HomeScreen(),
         );
       },
     );
@@ -140,5 +138,83 @@ class _MyHomePageState extends State<MyHomePage> {
         child: const Icon(Icons.add),
       ), // This trailing comma makes auto-formatting nicer for build methods.
     );
+  }
+}
+
+
+
+class HomeScreen extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+
+    return NestedScrollView(
+      headerSliverBuilder: (BuildContext context, bool innerBoxIsScrolled) {
+
+        var hanlde = NestedScrollView.sliverOverlapAbsorberHandleFor(context);
+        debugPrint("hanlde = ${hanlde}");
+
+        return <Widget>[
+          SliverAppBar(
+            title: Text("kkkkkkkk"),
+            // ... AppBar properties ...
+          ),
+
+          SliverOverlapInjector(
+            // Injects content of the previous Sliver
+            handle: hanlde,
+          ),
+        ];
+      },
+      body: CustomScrollView(
+        slivers: <Widget>[
+          // SliverOverlapInjector(
+          //   // Injects content of the previous Sliver
+          //   handle: NestedScrollView.sliverOverlapAbsorberHandleFor(context),
+          // ),
+          SliverToBoxAdapter(
+            child: Container(
+              height: 200, // Adjust the height as needed
+              color: Colors.blue,
+              child: Center(
+                child: Text('Overlapping Content'),
+              ),
+            ),
+          ),
+          SliverList(
+            delegate: SliverChildBuilderDelegate(
+                  (BuildContext context, int index) {
+                return ListTile(
+                  title: Text('Item $index'),
+                );
+              },
+              childCount: 20,
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+class _HeaderDelegate extends SliverPersistentHeaderDelegate {
+  @override
+  double get minExtent => 100;
+  @override
+  double get maxExtent => 200;
+
+  @override
+  Widget build(
+      BuildContext context, double shrinkOffset, bool overlapsContent) {
+    return Container(
+      color: Colors.blue,
+      child: Center(
+        child: Text('SliverPersistentHeader', style: TextStyle(color: Colors.white)),
+      ),
+    );
+  }
+
+  @override
+  bool shouldRebuild(_HeaderDelegate oldDelegate) {
+    return false;
   }
 }

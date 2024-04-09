@@ -13,7 +13,7 @@ class FontsPage extends StatelessWidget {
       body: const Center(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
-          mainAxisAlignment: MainAxisAlignment.start,
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             // Text("美股", style: TextStyle(color: Colors.black, fontWeight: FontWeight.w500, fontSize: 14, fontFamily: "HM-Md"), textScaleFactor: 1),
             // Text("All", style: TextStyle(color: Colors.black, fontWeight: FontWeight.w500, fontSize: 14, fontFamily: "HM-Md"), textScaleFactor: 1,),
@@ -34,21 +34,48 @@ class FontsPage extends StatelessWidget {
             ),
 
             Text(
-              "我的第一个",
+              "测试zcrzcr",
               style: TextStyle(
                   color: Colors.black,
                   fontWeight: FontWeight.w500,
-                  fontSize: 14,
+                  fontSize: 16,
                   fontFamily: "HM-Md"),
               textScaleFactor: 1,
             ),
 
-            // Text("这是16号粗体", style: TextStyle(color: Colors.red, fontWeight: FontWeight.bold, fontSize: 16.sp, fontFamily: "HM-Bold"), textScaleFactor: 1,),
-            // Text("这是17号粗体", style: TextStyle(color: Colors.red, fontWeight: FontWeight.bold, fontSize: 17.sp, fontFamily: "HM-Bold"), textScaleFactor: 1,),
-            // Text("这是18号粗体", style: TextStyle(color: Colors.red, fontWeight: FontWeight.bold, fontSize: 18.sp, fontFamily: "HM-Bold"), textScaleFactor: 1,),
-            // Text("这是19号粗体", style: TextStyle(color: Colors.red, fontWeight: FontWeight.bold, fontSize: 19.sp, fontFamily: "HM-Bold"), textScaleFactor: 1,),
-            // Text("这是20号粗体", style: TextStyle(color: Colors.red, fontWeight: FontWeight.bold, fontSize: 20.sp, fontFamily: "HM-Bold"), textScaleFactor: 1,),
-            // Text("这是21号粗体", style: TextStyle(color: Colors.red, fontWeight: FontWeight.bold, fontSize: 21.sp, fontFamily: "HM-Bold"), textScaleFactor: 1,),
+            // Text("这是16号粗体", style: TextStyle(color: Colors.red, fontWeight: FontWeight.bold, fontSize: 16, fontFamily: "HM-Md"), textScaleFactor: 1,),
+            // Text("这是17号粗体", style: TextStyle(color: Colors.red, fontWeight: FontWeight.bold, fontSize: 17, fontFamily: "HM-Md"), textScaleFactor: 1,),
+            // Text("这是18号粗体", style: TextStyle(color: Colors.red, fontWeight: FontWeight.bold, fontSize: 18, fontFamily: "HM-Md"), textScaleFactor: 1,),
+            // Text("这是19号粗体", style: TextStyle(color: Colors.red, fontWeight: FontWeight.bold, fontSize: 19, fontFamily: "HM-Md"), textScaleFactor: 1,),
+            Text("Recommend", style: TextStyle(color: Colors.red, fontWeight: FontWeight.bold, fontSize: 20, fontFamily: "HM-Bold"), textScaleFactor: 1,),
+            Text(
+              "测试zcrzcr",
+              style: TextStyle(
+                  color: Colors.black,
+                  fontWeight: FontWeight.w500,
+                  fontSize: 16,
+                  fontFamily: "HM-Md"),
+              textScaleFactor: 1,
+            ),
+            Text(
+              "测试zcrzcr",
+              style: TextStyle(
+                  color: Colors.black,
+                  fontWeight: FontWeight.w500,
+                  fontSize: 16,
+                  fontFamily: "HM-Md"),
+              textScaleFactor: 1,
+            ),
+            Text(
+              "测试zcrzcr",
+              style: TextStyle(
+                  color: Colors.black,
+                  fontWeight: FontWeight.w500,
+                  fontSize: 16,
+                  fontFamily: "HM-Md"),
+              textScaleFactor: 1,
+            ),
+            // Text("这是21号粗体", style: TextStyle(color: Colors.red, fontWeight: FontWeight.bold, fontSize: 21, fontFamily: "HM-Md"), textScaleFactor: 1,),
           ],
         ),
       ),

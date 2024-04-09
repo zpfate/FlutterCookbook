@@ -1,6 +1,8 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_widgets/widgets/custom_paint/custom_painter_example.dart';
+import 'package:flutter_widgets/widgets/custom_paint/schedule_painter.dart';
 
 class CustomPaintPage extends StatelessWidget {
 
@@ -10,9 +12,18 @@ class CustomPaintPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: const Text("CustomPainter"),),
-      body: CustomPaint(
-        size: const Size(200, 200),
-        painter: CirclePainter(),
+      body: GestureDetector(
+        onPanUpdate: (details) {
+          debugPrint("1111");
+        },
+        child: SizedBox(
+          width: 200,
+          height: 100,
+          child: CustomPaint(
+            painter: CustomPainterExample(),
+            size: const Size(200, 100),
+          ),
+        ),
       ),
     );
   }
@@ -20,12 +31,12 @@ class CustomPaintPage extends StatelessWidget {
 
 
 
+
+
 class CirclePainter extends CustomPainter {
 
-
-
+  @override
   void paint(Canvas canvas, Size size) {
-
     final Paint _paint = Paint()
       ..color = Colors.blueAccent
       ..style = PaintingStyle.stroke

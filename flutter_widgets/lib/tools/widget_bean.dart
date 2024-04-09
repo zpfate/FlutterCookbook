@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class ClickWidget extends StatelessWidget {
+
   final WidgetBean widgetBean;
   const ClickWidget({Key? key, required this.widgetBean}) : super(key: key);
 
@@ -14,7 +15,7 @@ class ClickWidget extends StatelessWidget {
         onPressed: () {
           if (widgetBean.page != null) {
             /// 路由跳转
-            Get.to(()=> widgetBean.page!, preventDuplicates: false);
+            Get.to(()=> widgetBean.page!);
           } else {
             if (widgetBean.onPressed != null) {
               widgetBean.onPressed!();
@@ -59,7 +60,7 @@ class ClickSection extends StatelessWidget {
 
 class WidgetBean<T extends Widget> {
   final String title;
-  final T? page;
+  final Widget? page;
   final Function()? onPressed;
   WidgetBean({required this.title, this.page, this.onPressed});
 }

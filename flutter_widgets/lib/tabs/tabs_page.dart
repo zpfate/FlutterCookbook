@@ -21,31 +21,10 @@ class _TabsPageState extends State<TabsPage> with TickerProviderStateMixin {
     super.initState();
   }
 
-  // @override
-  // Widget build(BuildContext context) {
-  //   // TODO: implement build
-  //   return GetBuilder<TabsPageController>(builder: (contro) {
-  //     return DefaultTabController(
-  //       initialIndex: tabsPageController.index,
-  //       length: tabsPageController.tabTexts.length, child: Scaffold(
-  //       appBar: AppBar(title: Text("333"),
-  //         bottom: TabBar(tabs: tabsPageController.tabs),
-  //       ),
-  //       body: TabBarView(children: tabsPageController.contentWidgets,),
-  //           floatingActionButton: FloatingActionButton(
-  //             onPressed: () {
-  //               tabsPageController.changeTabs(vsync: this);
-  //             },
-  //           ),
-  //     ),
-  //     );
-  //   });
-  // }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("Tabs Page"),),
+      appBar: AppBar(title: const Text("Tabs Page"),),
       body: GetBuilder<TabsPageController>(
         builder: (logic) {
           return Column(
@@ -55,7 +34,7 @@ class _TabsPageState extends State<TabsPage> with TickerProviderStateMixin {
                 controller: tabsPageController.tabController,),
 
               Expanded(
-                child: PageView.builder(itemBuilder: (context, index){
+                child: PageView.builder(itemBuilder: (context, index) {
                   return TabsSubPage(text: tabsPageController.tabTexts[index]);
             }, itemCount: tabsPageController.tabTexts.length,),
               ),
