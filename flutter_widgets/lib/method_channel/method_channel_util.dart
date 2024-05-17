@@ -26,18 +26,28 @@ class MethodChannelUtil {
   /// 其在iOS端使用了NSJSONSerialization作为序列化的工具，而在Android端则使用了其自定义的JSONUtil与StringCodec作为序列化工具。
   ///
   /// StandardMessageCodec:是BasicMessageChannel的默认编解码器，其支持基础数据类型、二进制数据、列表、字典
-  static const messageChannel = BasicMessageChannel("samples.zpfate/utils", StandardMessageCodec());
-  static openAppMarket2() async {
+  // static const messageChannel = BasicMessageChannel("samples.zpfate/utils", StandardMessageCodec());
+  // static openAppMarket2() async {
+  //   dynamic result;
+  //   try {
+  //     result = await messageChannel.send('openAppMarket');
+  //   } catch (e) {
+  //     result = 1;
+  //   }
+  //   logUtil("Result: $result");
+  // }
+
+
+  static getBundlePath() async {
     dynamic result;
     try {
-      result = await messageChannel.send('openAppMarket');
+      result = await methodChannel.invokeMethod('getBundlePath');
+
     } catch (e) {
       result = 1;
     }
+    return result;
     logUtil("Result: $result");
   }
-
-
-
 
 }

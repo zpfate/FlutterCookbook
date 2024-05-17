@@ -86,7 +86,7 @@ class _SchedulePainterState extends State<SchedulePainter> {
                   painter: _SchedulePainter(params: _params!),
                 ),
               );
-            }, duration: Duration(milliseconds: 300),
+            }, duration: const Duration(milliseconds: 300),
           )
         ),
       );

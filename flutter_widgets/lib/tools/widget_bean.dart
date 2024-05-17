@@ -2,20 +2,29 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class ClickWidget extends StatelessWidget {
-
   final WidgetBean widgetBean;
   const ClickWidget({Key? key, required this.widgetBean}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.only(left: 16),
-      child: ElevatedButton(
-        child: Text(widgetBean.title),
-        onPressed: () {
+      padding: const EdgeInsets.only(left: 8),
+      child: InkWell(
+        child: Container(
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(40),
+              color: Colors.blue,
+            ),
+            padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 6),
+            margin: const EdgeInsets.symmetric(horizontal: 6, vertical: 4),
+            child: Text(
+              widgetBean.title,
+              style: const TextStyle(color: Colors.white),
+            )),
+        onTap: () {
           if (widgetBean.page != null) {
             /// 路由跳转
-            Get.to(()=> widgetBean.page!);
+            Get.to(() => widgetBean.page!);
           } else {
             if (widgetBean.onPressed != null) {
               widgetBean.onPressed!();

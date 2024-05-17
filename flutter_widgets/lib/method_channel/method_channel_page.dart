@@ -20,19 +20,16 @@ class _MethodChannelPageState extends State<MethodChannelPage> {
           ClickWidget(
             widgetBean: WidgetBean(
                 title: "MethodChannel",
-              onPressed: () {
-                MethodChannelUtil.openAppMarket();
-              }
-              ),
+                onPressed: () {
+                  MethodChannelUtil.openAppMarket();
+                }),
           ),
-
           ClickWidget(
             widgetBean: WidgetBean(
                 title: "BasicMethodChannel",
                 onPressed: () {
-                  MethodChannelUtil.openAppMarket2();
-                }
-            ),
+                  // MethodChannelUtil.openAppMarket2();
+                }),
           ),
         ],
       ),

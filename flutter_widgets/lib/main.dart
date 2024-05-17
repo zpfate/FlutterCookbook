@@ -1,5 +1,6 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
+import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:flutter_widgets/key/key_page.dart';
 import 'package:flutter_widgets/tabs/tabs_page.dart';
 import 'package:flutter_widgets/widgets/InheritedWidget/inherited_page.dart';
@@ -12,6 +13,7 @@ import 'package:flutter_widgets/widgets/custom_paint/custom_paint.dart';
 import 'package:flutter_widgets/widgets/custom_paint/custom_painter_example.dart';
 import 'package:flutter_widgets/widgets/custom_paint/schedule_painter.dart';
 import 'package:flutter_widgets/widgets/dropdown_textfield.dart';
+import 'package:flutter_widgets/widgets/easy_loading_page.dart';
 import 'package:flutter_widgets/widgets/event_bus_page.dart';
 import 'package:flutter_widgets/widgets/future_page.dart';
 import 'package:flutter_widgets/widgets/hero_page.dart';
@@ -21,6 +23,7 @@ import 'package:flutter_widgets/widgets/listener_page.dart';
 import 'package:flutter_widgets/local_storage/local_storage_page.dart';
 import 'package:flutter_widgets/method_channel/method_channel_page.dart';
 import 'package:flutter_widgets/network.dart';
+import 'package:flutter_widgets/widgets/lock.dart';
 import 'package:flutter_widgets/widgets/notification.dart';
 import 'package:flutter_widgets/widgets/platform_view_page.dart';
 import 'package:flutter_widgets/state_manager/state_manager_page.dart';
@@ -35,6 +38,7 @@ import 'package:flutter_widgets/widgets/stream_builder_page.dart';
 import 'package:flutter_widgets/widgets/stream_page.dart';
 import 'package:flutter_widgets/widgets/tabbar_page.dart';
 import 'package:flutter_widgets/widgets/touch_page.dart';
+import 'package:flutter_widgets/widgets/webview_page.dart';
 import 'package:get/route_manager.dart';
 
 void main() {
@@ -76,23 +80,25 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
 
+
+
+
     return GetMaterialApp(
+      builder: EasyLoading.init(),
       title: 'Flutter Demo',
       //注册路由
       routes: {
         "/route_next": (context) => const RouteNextPage(),
         "/r1": (context) => const Route1Page(),
-
       },
       getPages: [
-        GetPage(name: "/r1", page: ()=>Route1Page()),
-        GetPage(name: "/r2", page: ()=>Route1Page()),
-        GetPage(name: "/r3", page: ()=>Route1Page()),
-        GetPage(name: "/home", page: ()=>MyHomePage(title: "",)),
-
+        GetPage(name: "/r1", page: ()=> const Route1Page()),
+        GetPage(name: "/r2", page: ()=> const Route1Page()),
+        GetPage(name: "/r3", page: ()=> const Route1Page()),
+        GetPage(name: "/home", page: ()=> const MyHomePage(title: "",)),
       ],
       navigatorObservers: [routeObserver],
-      //错误路由处理，统一返回UnknownPage
+      /// 错误路由处理，统一返回UnknownPage
       onUnknownRoute: (RouteSettings setting) =>
           MaterialPageRoute(builder: (context) => const RouteUnknownPage()),
       theme: ThemeData(
@@ -106,7 +112,6 @@ class MyApp extends StatelessWidget {
 class MyHomePage extends StatefulWidget {
 
   const MyHomePage({Key? key, required this.title}) : super(key: key);
-
   final String title;
 
   @override
@@ -121,12 +126,12 @@ class _MyHomePageState extends State<MyHomePage> with RouteAware {
     super.initState();
 
     List<WidgetBean> list = [
+
       WidgetBean(title: "Lifecycle", page: const LifeCyclePage()),
       WidgetBean(title: "Sliver", page: const SliverPage()),
       WidgetBean(title: "CustomPaint", page: const CustomPaintPage()),
-
+      WidgetBean(title: "Lock", page: const LockPage()),
       WidgetBean(title: "SchedulePainter", page: SchedulePainter(itemWidth: 24, startTime: DateTime.now(), endTime: DateTime.now().add(const Duration(days: 10)),)),
-
       WidgetBean(title: "Listener", page: const ListenerPage()),
       WidgetBean(title: "GestureDetector", page: const GestureDetectorPage()),
       WidgetBean(title: "RawGestureDetector", page: const RawGestureDetector()),
@@ -139,7 +144,6 @@ class _MyHomePageState extends State<MyHomePage> with RouteAware {
       WidgetBean(title: "AnimatedWidget", page: const AnimatedWidgetPage()),
       WidgetBean(title: "AnimatedBuilder", page: const AnimatedBuilderPage()),
       WidgetBean(title: "TweenAnimationBuilder", page: const TweenAnimationBuilderPage()),
-
       WidgetBean(title: "Hero", page: const HeroPage()),
       WidgetBean(title: "Future", page: const FuturePage()),
       WidgetBean(title: "Isolate", page: const IsolatePage()),
@@ -155,9 +159,11 @@ class _MyHomePageState extends State<MyHomePage> with RouteAware {
       WidgetBean(title: "Signature", page: const SignaturePage()),
       WidgetBean(title: "Tabs", page: const TabsPage()),
       WidgetBean(title: "ScrollView", page: const ScrollViewPage()),
-      WidgetBean(title: "RouteObserver", page:  RouteObserverPage(color: Colors.red,)),
-      WidgetBean(title: "TabbarPage", page: const TabbarPage()),
+      WidgetBean(title: "RouteObserver", page:  const RouteObserverPage(color: Colors.red,)),
+      WidgetBean(title: "TabBarPage", page: const TabbarPage()),
       WidgetBean(title: "Route1", page: const Route1Page()),
+      WidgetBean(title: "EasyLoading", page: const EasyLoadingPage()),
+      WidgetBean(title: "Webview", page: const WebviewPage()),
 
     ];
 
