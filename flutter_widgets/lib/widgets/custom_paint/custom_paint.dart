@@ -1,8 +1,5 @@
 import 'dart:math';
-
 import 'package:flutter/material.dart';
-import 'package:flutter_widgets/widgets/custom_paint/custom_painter_example.dart';
-import 'package:flutter_widgets/widgets/custom_paint/schedule_painter.dart';
 
 class CustomPaintPage extends StatelessWidget {
 
@@ -29,9 +26,37 @@ class CustomPaintPage extends StatelessWidget {
   }
 }
 
+class CustomPainterExample extends CustomPainter {
+  @override
+  void paint(Canvas canvas, Size size) {
+    Paint paint = Paint()
+      ..color = Colors.blue
+      ..style = PaintingStyle.fill;
 
+    /// 绘制一个矩形
+    Rect rect = const Rect.fromLTWH(10, 0, 100, 50);
+    // canvas.drawRect(rect, paint);
+    //
+    // /// translate是将画布平移到当前位置
+    // canvas.translate(100, 100);
+    //
+    // Paint circlePaint = Paint()..color = Colors.red..style = PaintingStyle.fill;
+    // /// 绘制一个圆形
+    // canvas.drawCircle(const Offset(100, 100), 30, circlePaint);
 
+    RRect backgroundRRect = RRect.fromRectAndRadius(
+      rect,
+      const Radius.circular(17),  // 圆角半径
+    );
+    canvas.drawRRect(backgroundRRect, paint);
 
+  }
+
+  @override
+  bool shouldRepaint(CustomPainter oldDelegate) {
+    return false;
+  }
+}
 
 class CirclePainter extends CustomPainter {
 

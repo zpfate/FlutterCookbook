@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:flutter_widgets/key/key_page.dart';
@@ -10,7 +11,6 @@ import 'package:flutter_widgets/widgets/animation/animated_widget_page.dart';
 import 'package:flutter_widgets/widgets/animation/animation_page.dart';
 import 'package:flutter_widgets/widgets/animation/tween_animation_builder_page.dart';
 import 'package:flutter_widgets/widgets/custom_paint/custom_paint.dart';
-import 'package:flutter_widgets/widgets/custom_paint/custom_painter_example.dart';
 import 'package:flutter_widgets/widgets/custom_paint/schedule_painter.dart';
 import 'package:flutter_widgets/widgets/dropdown_textfield.dart';
 import 'package:flutter_widgets/widgets/easy_loading_page.dart';
@@ -25,6 +25,7 @@ import 'package:flutter_widgets/method_channel/method_channel_page.dart';
 import 'package:flutter_widgets/network.dart';
 import 'package:flutter_widgets/widgets/lock.dart';
 import 'package:flutter_widgets/widgets/notification.dart';
+import 'package:flutter_widgets/widgets/orientation_page.dart';
 import 'package:flutter_widgets/widgets/platform_view_page.dart';
 import 'package:flutter_widgets/state_manager/state_manager_page.dart';
 import 'package:flutter_widgets/tools/log_util.dart';
@@ -37,6 +38,7 @@ import 'package:flutter_widgets/widgets/sliver.dart';
 import 'package:flutter_widgets/widgets/stream_builder_page.dart';
 import 'package:flutter_widgets/widgets/stream_page.dart';
 import 'package:flutter_widgets/widgets/tabbar_page.dart';
+import 'package:flutter_widgets/widgets/textfiled_page.dart';
 import 'package:flutter_widgets/widgets/touch_page.dart';
 import 'package:flutter_widgets/widgets/webview_page.dart';
 import 'package:get/route_manager.dart';
@@ -80,9 +82,6 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
 
-
-
-
     return GetMaterialApp(
       builder: EasyLoading.init(),
       title: 'Flutter Demo',
@@ -103,8 +102,16 @@ class MyApp extends StatelessWidget {
           MaterialPageRoute(builder: (context) => const RouteUnknownPage()),
       theme: ThemeData(
         primarySwatch: Colors.blue,
+        cupertinoOverrideTheme: CupertinoThemeData(
+          primaryColor: Colors.red
+        ),
+        textSelectionTheme: const TextSelectionThemeData(
+          selectionHandleColor: Colors.blue,
+          selectionColor: Colors.green,
+          cursorColor: Colors.red,
+        ),
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      home: const TextfiledPage(),
     );
   }
 }
@@ -164,6 +171,8 @@ class _MyHomePageState extends State<MyHomePage> with RouteAware {
       WidgetBean(title: "Route1", page: const Route1Page()),
       WidgetBean(title: "EasyLoading", page: const EasyLoadingPage()),
       WidgetBean(title: "Webview", page: const WebviewPage()),
+      WidgetBean(title: "Orientation", page: const OrientationPage()),
+      WidgetBean(title: "TextField", page: const TextfiledPage()),
 
     ];
 
